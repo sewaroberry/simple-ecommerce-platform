@@ -1,0 +1,32 @@
+Inventory Tracker
+Stock levels with low-stock alerts or restock suggestions.
+
+🔹 6. Sales Analytics
+Charts showing daily/weekly/monthly sales, top products, revenue.
+
+🔹 7. Messages / Support Inbox
+Chat or inbox system for talking with customers or admin support.
+
+🔹 8. Shipping Settings
+Preferred shipping methods, rates, carriers, estimated delivery times.
+
+🔹 9. Payment Settings
+Connect PayPal, Stripe, or bank info for payouts.
+
+🔹 10. Payout History
+List of completed payouts with amounts and dates.
+
+🔹 11. Discounts / Promo Management
+Create/manage discount codes, sales events, limited-time offers.
+
+🔹 12. Customer Reviews & Ratings
+See feedback on products, manage public replies.
+
+🔹 13. Notifications Center
+New order alerts, stock warnings, payout updates, support messages.
+
+🔹 14. Seller Help / FAQ
+Guides on how to use the platform, policies, support links.
+
+🔹 15. Logout / Security Settings
+Logout, enable 2FA, manage sessions/devices.

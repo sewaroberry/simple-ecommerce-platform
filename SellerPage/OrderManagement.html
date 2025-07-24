@@ -1,0 +1,812 @@
+<html>
+  <head>
+    <title>Agozi | Homepage</title>
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f1fdfb 10%, #e2f5f3, #fff);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* The Section */
+      a {
+        text-decoration: none;
+      }
+
+      
+
+      /* .view-btn:hover {
+        background: #004d40;
+      }
+
+      .cancel-btn {
+        background: #ef5350;
+        color: white;
+      }
+
+      .cancel-btn:hover {
+        background: #c62828;
+      }
+
+      .cancel-btn.disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      } */
+
+      .order-management {
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        padding: 4rem 2rem;
+        min-height: 88vh;
+        display: flex;
+        justify-content: center;
+      }
+
+      .order-management-inner {
+        width: 100%;
+        max-width: 1100px;
+      }
+
+      .order-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .order-header h2 {
+        font-size: 2rem;
+        color: #00796b;
+      }
+
+      .order-header p {
+        color: #555;
+      }
+
+      /* Controls */
+      .order-controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .order-search {
+        flex: 1;
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .status-filter {
+        padding: 0.6rem 2.5rem 0.6rem 1rem; /* top/bottom 0.6rem, right 2.5rem, left 1rem */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+      }
+
+      /* Table Styling */
+      .order-table-wrapper {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .order-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 750px;
+      }
+
+      .order-table thead {
+        background: #00796b;
+        color: white;
+      }
+
+      .order-table th,
+      .order-table td {
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .order-table tbody tr:hover {
+        background-color: #f9f9f9;
+      }
+
+      /* Customer Avatar */
+      .customer-info {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #b2dfdb;
+        color: #004d40;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Status Badges */
+      .status-badge {
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .status-badge.pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .status-badge.shipped {
+        background: #d1ecf1;
+        color: #0c5460;
+      }
+
+      .status-badge.delivered {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .status-badge.cancelled {
+        background: #f8d7da;
+        color: #721c24;
+      }
+
+      /* Action Buttons */
+      .action {
+        padding: 0.4rem 0.9rem;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-right: 5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .action.view {
+        background: #00796b;
+        color: white;
+      }
+
+      .action.cancel {
+        background: #ef5350;
+        color: white;
+      }
+
+      .action.disabled {
+        background: #ccc !important;
+        cursor: not-allowed;
+      }
+
+      .load-more-row td {
+        text-align: center;
+        padding: 1.5rem 0;
+        cursor: pointer;
+      }
+
+      .load-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #00796b;
+        font-weight: 600;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+
+      .load-more:hover {
+        color: #004d40;
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <i class="bx bx-search-alt-2"></i>
+        <a href="SellerMainPage.html"><i class='bx bxs-user-circle'></i></a>
+        <a href="#"><i class='bx bxs-cog' ></i></a>
+      </div>
+    </header>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Order Management Section -->
+    <section class="order-management fade-in">
+      <div class="order-management-inner">
+        <div class="order-header">
+          <h2>Order Management</h2>
+          <p>Track, update, and analyze all customer orders.</p>
+        </div>
+
+        <!-- Controls: Search + Filter -->
+        <div class="order-controls">
+          <input
+            type="text"
+            placeholder="Search by customer or order ID..."
+            class="order-search"
+          />
+          <select class="status-filter">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <div class="order-table-wrapper">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Order 1 -->
+              <tr>
+                <td>#10234</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">A</div>
+                    <span>Ali Ahmad</span>
+                  </div>
+                </td>
+                <td>Apr 18, 2025</td>
+                <td>$149.99</td>
+                <td>
+                  <span class="status-badge pending"
+                    ><i class="bx bx-time"></i> Pending</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order1.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+              <!-- Order 2 -->
+              <tr>
+                <td>#10235</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">S</div>
+                    <span>Sara Zayed</span>
+                  </div>
+                </td>
+                <td>Apr 17, 2025</td>
+                <td>$89.00</td>
+                <td>
+                  <span class="status-badge shipped"
+                    ><i class="bx bx-rocket"></i> Shipped</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order2.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+              <!-- Order 3 -->
+              <tr>
+                <td>#10236</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">K</div>
+                    <span>Khalid N.</span>
+                  </div>
+                </td>
+                <td>Apr 16, 2025</td>
+                <td>$199.50</td>
+                <td>
+                  <span class="status-badge delivered"
+                    ><i class="bx bx-check-circle"></i> Delivered</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order3.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+              <!-- Order 4 -->
+              <tr>
+                <td>#10237</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">N</div>
+                    <span>Noor S.</span>
+                  </div>
+                </td>
+                <td>Apr 15, 2025</td>
+                <td>$59.90</td>
+                <td>
+                  <span class="status-badge cancelled"
+                    ><i class="bx bx-error"></i> Cancelled</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order4.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+              <!-- Order 2 -->
+              <tr>
+                <td>#10235</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">S</div>
+                    <span>Sarah Khalid</span>
+                  </div>
+                </td>
+                <td>Apr 18, 2025</td>
+                <td>$89.50</td>
+                <td>
+                  <span class="status-badge shipped"
+                    ><i class="bx bx-rocket"></i> Shipped</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order5.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Order 3 -->
+              <tr>
+                <td>#10236</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">L</div>
+                    <span>Lina Haddad</span>
+                  </div>
+                </td>
+                <td>Apr 17, 2025</td>
+                <td>$239.00</td>
+                <td>
+                  <span class="status-badge pending"
+                    ><i class="bx bx-time"></i> Pending</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order6.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Order 4 -->
+              <tr>
+                <td>#10237</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">O</div>
+                    <span>Omar Fares</span>
+                  </div>
+                </td>
+                <td>Apr 16, 2025</td>
+                <td>$59.99</td>
+                <td>
+                  <span class="status-badge cancelled"
+                    ><i class="bx bx-error"></i> Cancelled</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order7.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Order 5 -->
+              <tr>
+                <td>#10238</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">D</div>
+                    <span>Dina Matar</span>
+                  </div>
+                </td>
+                <td>Apr 15, 2025</td>
+                <td>$120.00</td>
+                <td>
+                  <span class="status-badge shipped"
+                    ><i class="bx bx-rocket"></i> Shipped</span
+                  >
+                </td>
+                <td>
+                  <a class="action view" href="Order8.html">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel disabled">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Order 6 -->
+              <tr>
+                <td>#10239</td>
+                <td>
+                  <div class="customer-info">
+                    <div class="avatar">H</div>
+                    <span>Hadi Barakat</span>
+                  </div>
+                </td>
+                <td>Apr 14, 2025</td>
+                <td>$310.75</td>
+                <td>
+                  <span class="status-badge pending"
+                    ><i class="bx bx-time"></i> Pending</span
+                  >
+                </td>
+                <td>
+                  <a class="action view">
+                    <i class="bx bx-show"></i> View
+                  </a>
+                  <button class="action cancel">
+                    <i class="bx bx-x"></i> Cancel
+                  </button>
+                </td>
+              </tr>
+              <!-- Load More Row -->
+              <tr class="load-more-row">
+                <td colspan="6">
+                  <div class="load-more">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Agozi</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+            --primary-dark: #004d40;
+            --primary: #00796b;
+            --primary-light: #68a79f;
+            --accent: #b2dfdb;
+            --text-dark: #263238;
+            --text-medium: #546e7a;
+            --text-light: #90a4ae;
+            --bg-light: #f5f5f5;
+            --white: #ffffff;
+            --light-gray: #eceff1;
+            --border-radius: 16px;
+            --error-color: #ff5252;
+            --success-color: #4caf50;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .head-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .head-icons a {
+            font-size: 1.7rem;
+            color: var(--primary-dark);
+            transition: var(--transition);
+        }
+
+        .head-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Settings Content */
+        .settings-container {
+            flex: 1;
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .settings-sidebar {
+            width: 280px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .user-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .user-email {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .settings-menu {
+            list-style: none;
+        }
+
+        .settings-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-menu a {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            border-radius: var(--border-radius);
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .settings-menu a i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .settings-menu a:hover, .settings-menu a.active {
+            background: rgba(0, 121, 107, 0.1);
+            color: var(--primary);
+        }
+
+        .settings-menu a.active {
+            font-weight: 700;
+        }
+
+        /* Main Content */
+        .settings-content {
+            flex: 1;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+        }
+
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .settings-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .settings-title i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .settings-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 121, 107, 0.1);
+        }
+
+        /* Settings Sections */
+        .settings-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.18rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .section-edit {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section-edit i {
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-medium);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.2);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23546e7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+
+        .avatar-upload {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .avatar-preview {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--light-gray);
+        }
+
+        .avatar-upload-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .avatar-upload-btn input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--light-gray);
+            transition: var(--transition);
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: var(--white);
+            transition: var(--transition);
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-label {
+            font-weight: 500;
+        }
+
+        .notification-desc {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-top: 0.3rem;
+        }
+
+        /* Security Section */
+        .security-alert {
+            background: rgba(255, 82, 82, 0.1);
+            border-left: 4px solid var(--error-color);
+            padding: 1rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .security-alert i {
+            color: var(--error-color);
+            font-size: 1.5rem;
+        }
+
+        .security-alert-content h4 {
+            color: var(--error-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .security-alert-content p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .devices-list {
+            list-style: none;
+        }
+
+        .device-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+            gap: 1rem;
+        }
+
+        .device-item:last-child {
+            border-bottom: none;
+        }
+
+        .device-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .device-info {
+            flex: 1;
+        }
+
+        .device-name {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .device-details {
+            font-size: 0.8rem;
+            color: var(--text-medium);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .device-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .device-action {
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .device-action:hover {
+            color: var(--primary-dark);
+        }
+
+        .current-device {
+            background: rgba(178, 223, 219, 0.2);
+            border-radius: var(--border-radius);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .settings-container {
+                flex-direction: column;
+            }
+
+            .settings-sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .settings-menu {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .settings-menu li {
+                margin-bottom: 0;
+                margin-right: 0.5rem;
+            }
+
+            .settings-menu a {
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .settings-content {
+                padding: 1.5rem;
+            }
+
+            .settings-title {
+                font-size: 1.5rem;
+            }
+
+            .settings-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .avatar-upload {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class='bx bx-gift'></i>
+            <span>Agozi</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="head-icons">
+            <a href="#"><i class='bx bx-search-alt-2'></i></a>
+            <a href="Wishlist.html"><i class='bx bxs-heart'></i></a>
+            <a href="ShoppingBag.html"><i class='bx bx-shopping-bag'></i></a>
+        </div>
+    </header>
+
+    <!-- Settings Content -->
+    <div class="settings-container">
+        <!-- Sidebar -->
+        <div class="settings-sidebar">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="User Avatar" class="user-avatar">
+                <h3 class="user-name">Sarah Ahmed</h3>
+                <p class="user-email">sara.ahmed@example.com</p>
+            </div>
+
+            <ul class="settings-menu">
+                <li><a href="#" class="active"><i class='bx bx-user'></i> Profile</a></li>
+                <li><a href="#"><i class='bx bx-bell'></i> Notifications</a></li>
+                <li><a href="#"><i class='bx bx-lock-alt'></i> Security</a></li>
+                <li><a href="#"><i class='bx bx-credit-card'></i> Payment</a></li>
+                <li><a href="#"><i class='bx bx-globe'></i> Language</a></li>
+                <li><a href="#"><i class='bx bx-moon'></i> Appearance</a></li>
+                <li><a href="#"><i class='bx bx-log-out'></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="settings-content">
+            <div class="settings-header">
+                <div class="settings-title">
+                    <i class='bx bx-cog'></i>
+                    <h2>Settings</h2>
+                </div>
+                <div class="settings-actions">
+                    <button class="btn btn-outline"><i class='bx bx-reset'></i> Reset</button>
+                    <button class="btn btn-primary"><i class='bx bx-save'></i> Save Changes</button>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title"><i class='bx bx-user'></i> Profile</h3>
+                    <a href="#" class="section-edit"><i class='bx bx-edit'></i> Edit</a>
+                </div>
+
+                <div class="avatar-upload">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="User Avatar" class="avatar-preview">
+                    <div class="avatar-upload-btn">
+                        <button class="btn btn-outline"><i class='bx bx-upload'></i> Change Photo</button>
+                        <input type="file" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" id="first-name" class="form-control" value="Sarah">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" id="last-name" class="form-control" value="Ahmed">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" value="sara.ahmed@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" value="+966501234567">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate" class="form-label">Birthdate</label>
+                    <input type="date" id="birthdate" class="form-control" value="1990-05-15">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-control form-select">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title"><i class='bx bx-bell'></i> Notifications</h3>
+                    <a href="#" class="section-edit"><i class='bx bx-edit'></i> Edit</a>
+                </div>
+
+                <div class="notification-item">
+                    <div>
+                        <div class="notification-label">Email Notifications</div>
+                        <div class="notification-desc">Receive updates and special offers via email</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div>
+                        <div class="notification-label">Payment Notifications</div>
+                        <div class="notification-desc">Receive payment confirmations and shipping updates</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div>
+                        <div class="notification-label">App Notifications</div>
+                        <div class="notification-desc">Receive in-app notifications</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-item">
+                    <div>
+                        <div class="notification-label">Special Offers</div>
+                        <div class="notification-desc">Receive exclusive offers and discounts</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Security Section -->
+            <div class="settings-section">
+                <div class="section-header">
+                    <h3 class="section-title"><i class='bx bx-lock-alt'></i> Security</h3>
+                    <a href="#" class="section-edit"><i class='bx bx-edit'></i> Edit</a>
+                </div>
+
+                <div class="security-alert">
+                    <i class='bx bx-shield-quarter'></i>
+                    <div class="security-alert-content">
+                        <h4>Security Alert</h4>
+                        <p>Your last login was from a new device on June 15, 2023</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="current-password" class="form-label">Current Password</label>
+                    <input type="password" id="current-password" class="form-control" placeholder="Enter current password">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password" class="form-label">New Password</label>
+                    <input type="password" id="new-password" class="form-control" placeholder="Enter new password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="form-control" placeholder="Re-enter new password">
+                </div>
+
+                <h4 class="section-title" style="font-size: 1.2rem; margin: 1.5rem 0;"><i class='bx bx-devices'></i> Connected Devices</h4>
+
+                <ul class="devices-list">
+                    <li class="device-item current-device">
+                        <div class="device-icon">
+                            <i class='bx bx-mobile-alt'></i>
+                        </div>
+                        <div class="device-info">
+                            <div class="device-name">iPhone 13 Pro</div>
+                            <div class="device-details">
+                                <span>iOS 15.4</span>
+                                <span>Jeddah, Saudi Arabia</span>
+                                <span>Currently active</span>
+                            </div>
+                        </div>
+                        <div class="device-actions">
+                            <div class="device-action"><i class='bx bx-power-off'></i></div>
+                        </div>
+                    </li>
+                    <li class="device-item">
+                        <div class="device-icon">
+                            <i class='bx bx-laptop'></i>
+                        </div>
+                        <div class="device-info">
+                            <div class="device-name">MacBook Pro</div>
+                            <div class="device-details">
+                                <span>macOS 12.3</span>
+                                <span>Riyadh, Saudi Arabia</span>
+                                <span>Last active: 5 days ago</span>
+                            </div>
+                        </div>
+                        <div class="device-actions">
+                            <div class="device-action"><i class='bx bx-power-off'></i></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Help</a>
+        </div>
+        <p>© 2023 Agozi. All rights reserved</p>
+    </footer>
+
+    <script>
+        // Change active menu item
+        document.querySelectorAll('.settings-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.settings-menu a').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Toggle edit mode for sections
+        document.querySelectorAll('.section-edit').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.closest('.settings-section');
+                const inputs = section.querySelectorAll('input, select');
+                
+                inputs.forEach(input => {
+                    input.disabled = !input.disabled;
+                    input.classList.toggle('form-control-edit');
+                });
+            });
+        });
+
+        // Preview avatar before upload
+        const avatarUpload = document.querySelector('.avatar-upload input[type="file"]');
+        const avatarPreview = document.querySelector('.avatar-preview');
+        
+        avatarUpload.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    avatarPreview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

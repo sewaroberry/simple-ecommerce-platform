@@ -1,0 +1,1787 @@
+<html>
+  <head>
+    <title>Agozi | Homepage</title>
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS style -->
+    <style>
+      :root {
+        /* Color variables */
+        --primary-dark: #004d40;
+        --primary: #00796b;
+        --primary-light: #68a79f;
+        --accent: #b2dfdb;
+        --text-dark: #333;
+        --text-medium: #555;
+        --text-light: #888;
+        --bg-light: #f9f9f9;
+        --white: #ffffff;
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 4rem 2rem;
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: url("images/hero-banner.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 88vh;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+        padding-left: 40px;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #333;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 40px;
+      }
+
+      .hero .btn-group {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        padding-left: 40px;
+      }
+
+      .cta-btn1 {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.808), #00796b);
+        color: white;
+        text-decoration: none;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-btn1:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Features Section - Improved */
+      .features {
+        background: var(--white);
+        padding: 3.2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .features-row {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+      }
+
+      .feature-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        transition: var(--transition);
+        /* flex: 1 1 300px; */
+        max-width: 360px;
+        /* box-shadow: var(--shadow-sm); */
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        border-radius: 50%;
+        color: var(--primary);
+        font-size: 2rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .feature-card p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      /* Why Shop With Agozi Section */
+      .why-shop-section {
+        height: 88vh;
+        padding: 4rem 2rem;
+        background-color: #ffffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .why-shop-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .benefits-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .benefit-card {
+        background-color: #ffffff; /* solid white */
+        padding: 2rem;
+        border-radius: 16px;
+        /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); */
+        max-width: 300px;
+        flex: 1;
+      }
+
+      .benefit-card img {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+        margin-bottom: 1.2rem;
+      }
+
+      .benefit-card p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      /* Best Sellers Section Styling */
+      .best-sellers-section {
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        padding: 50px 20px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.8rem;
+        font-weight: bold;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        margin-top: 10px;
+      }
+
+      /* Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Product Card */
+      .product-card {
+        position: relative;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
+
+      /* Info */
+      .product-info {
+        margin-bottom: 10px;
+      }
+
+      .product-title {
+        font-size: 1.1rem;
+        color: #004d40;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .product-price {
+        font-size: 1rem;
+        color: #444;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 6px;
+      }
+
+      /* Discount Badge */
+      .discount-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: #00796b;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Button */
+      .cta-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00796b;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .cta-btn:hover {
+        background-color: #004d40;
+      }
+
+      @media (max-width: 1200px) {
+        .best-sellers-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .best-sellers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .best-sellers-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Promotions Section */
+      .promotions-section {
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+      }
+
+      .promo-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .promo-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .promo-subtitle {
+        font-size: 1.1rem;
+        color: #555;
+        margin-top: 8px;
+      }
+
+      /* Promo Grid */
+      .promo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Promo Card */
+      .promo-card {
+        position: relative;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease;
+      }
+
+      .promo-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .promo-card img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+      }
+
+      .promo-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .promo-badge {
+        display: inline-block;
+        background-color: #00796b;
+        color: white;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .promo-name {
+        font-size: 1.2rem;
+        color: #004d40;
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+
+      .promo-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00796b;
+        color: #fff;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .promo-btn:hover {
+        background-color: #004d40;
+      }
+
+      /* Customers Review Section */
+      /* ------------------------------------- */
+      .testimonials-section {
+        background: #f4f4f4;
+        padding: 80px 50px;
+        min-height: 88vh;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        background: linear-gradient(90deg, #004d40, #00796b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 50px;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .testimonial-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .customer-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      .customer-name {
+        color: #00796b;
+        font-size: 1.2rem;
+        margin: 10px 0 5px;
+      }
+
+      .stars {
+        color: #fbc02d;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .customer-review {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Trending Section */
+      .trending-products-section {
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        padding: 48px 20px;
+        text-align: center;
+      }
+
+      .trending-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        background: linear-gradient(90deg, #004d40, #00796b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+      }
+
+      .trending-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .trending-item {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        width: 320px; /* زيادة العرض */
+        text-align: center;
+        position: relative;
+        padding-bottom: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .trending-item:hover {
+        transform: translateY(-4px);
+      }
+
+      .item-image {
+        width: 100%;
+        height: 290px; /* زيادة الارتفاع */
+        object-fit: cover;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+      }
+
+      .item-details {
+        padding: 12px 10px 0;
+      }
+
+      .item-name {
+        color: #004d40;
+        font-size: 1.1rem; /* زيادة حجم النص */
+        margin-bottom: 4px;
+      }
+
+      .item-price {
+        color: #444;
+        font-weight: 500;
+        font-size: 1.05rem; /* زيادة حجم النص */
+      }
+
+      /* Button */
+      .item-button {
+        margin-top: 12px;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        padding: 10px 20px; /* تعديل الحجم */
+        border-radius: 8px;
+        font-size: 1rem; /* زيادة حجم النص */
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .item-button:hover {
+        background-color: #004d40;
+      }
+
+      /* Badges */
+      .trending-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #00796b;
+        color: #fff;
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+      }
+
+      .trending-badge i {
+        font-size: 1rem;
+      }
+
+      .trending-badge.hot-item {
+        background-color: #e53835d8;
+      }
+
+      .trending-badge.new-item {
+        background-color: #43a048de;
+      }
+
+      .trending-badge.limited-item {
+        background-color: #fbc12dda;
+        color: #333;
+      }
+
+      /* Collections Section */
+      /* -------------------------------- */
+      .product-categories {
+        background-color: #f3f3f3;
+        padding: 4rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: #004d40;
+        font-weight: 700;
+      }
+
+      .categories-wrapper {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .category-card {
+        flex: 1;
+        max-width: 300px;
+        min-height: 250px;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .category-card .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 16px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .overlay h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .overlay p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .category-btn {
+        background-color: #00796b;
+        color: white;
+        padding: 0.6rem 1.4rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .category-btn:hover {
+        background-color: #004d40;
+      }
+
+      .category-btn i {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .categories-wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .category-card {
+          max-width: 80%;
+        }
+      }
+
+      /* New Section */
+      /* --------------------------- */
+      .quiz-section {
+        background: linear-gradient(135deg, #a8ddda 10%, #f3f3f3 80%);
+        padding: 2.5rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .quiz-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .quiz-text {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .quiz-text h2 {
+        font-size: 2.5rem;
+        color: #004d40;
+        margin-bottom: 1rem;
+      }
+
+      .quiz-text p {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .quiz-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.75rem 1.5rem;
+        background-color: #00796b;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: background 0.3s ease;
+      }
+
+      .quiz-btn:hover {
+        background-color: #004d40;
+      }
+
+      .quiz-visual {
+        flex: 1;
+        min-width: 280px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .quiz-visual img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+
+      /* Live Sales Section */
+      /* ---------------------------- */
+      .flash-sale-section {
+        background: linear-gradient(135deg, #a5d6a7 10%, #80cbc4);
+        color: #004d40;
+        padding: 2.5rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flash-sale-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .flash-sale-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .flash-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .flash-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+
+      .countdown {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .time-box {
+        background-color: white;
+        color: #004d40;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 70px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .time-box span {
+        font-size: 1.8rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .time-box small {
+        font-size: 0.8rem;
+      }
+
+      .flash-btn {
+        padding: 0.75rem 1.5rem;
+        background-color: #004d40;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.3s ease;
+      }
+
+      .flash-btn:hover {
+        background-color: #00332d;
+      }
+
+      .flash-sale-image {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .flash-sale-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        min-height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* Join As Seller Section */
+      .join-seller-section {
+        background: linear-gradient(135deg, #e0f2f1 10%, #f3f3f3 90%);
+        padding: 4rem 2rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .join-seller-container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .join-seller-text {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .join-seller-text h2 {
+        font-size: 2.2rem;
+        color: #004d40;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .join-seller-text p {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 1.5rem;
+        max-width: 500px;
+      }
+
+      .join-btn {
+        display: inline-block;
+        background-color: #00796b;
+        color: #fff;
+        padding: 0.8rem 1.6rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      .join-btn:hover {
+        background-color: #004d40;
+      }
+
+      .join-seller-image {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .join-seller-image img {
+        max-width: 500px;
+        border-radius: 50%;
+        border: 10px solid #00796b;
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Hedear Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <a href=""><i class="bx bx-search-alt-2"></i></a>
+        <a href="Login.html"><i class='bx bxs-user'></i></a>
+        <a href="#"><i class='bx bxs-cog' ></i></a>
+        <!-- <a href="RegisterPage.html">Login</a> -->
+        <!-- <a href="LoginPage.html">Login</a> -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div>
+        <h1>Welcome to Agozi!</h1>
+        <p>
+          Discover eco-friendly products that make a difference. From skincare
+          to home essentials, join us in embracing sustainability with every
+          purchase.
+        </p>
+
+        <div class="btn-group">
+          <a href="AllProducts.html" class="cta-btn1">Start Shopping</a>
+          <!-- <a href="BecomeSeller.html" class="cta-btn seller">Start Selling</a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <section class="features fade-in">
+        <h2 class="section-title">Why Shop With Us?</h2>
+        <div class="features-row">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-check-shield"></i>
+            </div>
+            <h3>Secure Payments</h3>
+            <p>Your data is protected with industry-grade encryption.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-package"></i>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>We make sure your orders reach you as quickly as possible.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-support"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Our team is here for you anytime, anywhere.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Why Shop With Agozi Section -->
+    <!-- <section class="why-shop-section fade-in">
+      <div class="why-shop-section fade-in">
+        <h2>Why Shop with Agozi?</h2>
+        <div class="benefits-container">
+          <div class="benefit-card">
+            <img src="images/features/feature1.jpg" alt="Guaranteed PURE" />
+            <p>
+              All Grace formulations adhere to strict purity standards and will
+              never contain harsh or toxic ingredients.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <img
+              src="images/features/feature2.jpg"
+              alt="Completely Cruelty-Free"
+            />
+            <p>
+              All Grace formulations adhere to strict purity standards and will
+              never contain harsh or toxic ingredients.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <img src="images/features/feature3.jpg" alt="Ingredient Sourcing" />
+            <p>
+              All Grace formulations adhere to strict purity standards and will
+              never contain harsh or toxic ingredients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="best-sellers-section fade-in">
+      <div class="section-header">
+        <h2 class="section-title">Best Sellers</h2>
+        <p class="section-subtitle">
+          Explore our top products that customers love with special discounts!
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product Card 1 (مع خصم) -->
+        <div class="product-card">
+          <div class="discount-badge">30% OFF</div>
+          <img src="Images/Items/BestSeller1.jpg" alt="Best Seller 1" />
+          <div class="product-info">
+            <h3 class="product-title">Crystal Moon Necklace</h3>
+            <p class="product-price"><span class="old-price">$129</span> $90</p>
+          </div>
+          <a href="#" class="cta-btn">View Product</a>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card">
+          <img src="Images/Items/BestSeller2.jpg" alt="Best Seller 2" />
+          <div class="product-info">
+            <h3 class="product-title">High Quality Knit</h3>
+            <p class="product-price">$149</p>
+          </div>
+          <a href="#" class="cta-btn">View Product</a>
+        </div>
+
+        <!-- Product Card 3 (مع خصم) -->
+        <div class="product-card">
+          <div class="discount-badge">20% OFF</div>
+          <img src="Images/Items/BestSeller3.jpg" alt="Best Seller 3" />
+          <div class="product-info">
+            <h3 class="product-title">rhode Lip Balm</h3>
+            <p class="product-price"><span class="old-price">$99</span> $79</p>
+          </div>
+          <a href="#" class="cta-btn">View Product</a>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card">
+          <img src="Images/Items/BestSeller4.jpg" alt="Best Seller 4" />
+          <div class="product-info">
+            <h3 class="product-title">Minimalist Hoops</h3>
+            <p class="product-price">$89</p>
+          </div>
+          <a href="#" class="cta-btn">View Product</a>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="promotions-section fade-in">
+      <div class="promo-header">
+        <h2 class="promo-title">Special Offers Just for You</h2>
+        <p class="promo-subtitle">Limited-time deals on top collections</p>
+      </div>
+
+      <div class="promo-grid">
+        <!-- Promo 1 -->
+        <div class="promo-card">
+          <img src="Images/Items/SpecialOffer1.jpg" alt="Promo 1" />
+          <div class="promo-info">
+            <span class="promo-badge">40% OFF</span>
+            <h3 class="promo-name">Elegant Necklaces</h3>
+            <a href="#" class="promo-btn">Shop Now</a>
+          </div>
+        </div>
+
+        <!-- Promo 2 -->
+        <div class="promo-card">
+          <img src="Images/Items/SpecialOffer2.jpg" alt="Promo 2" />
+          <div class="promo-info">
+            <span class="promo-badge">Buy 1 Get 1</span>
+            <h3 class="promo-name">Signature Rings</h3>
+            <a href="#" class="promo-btn">Shop Now</a>
+          </div>
+        </div>
+
+        <!-- Promo 3 -->
+        <div class="promo-card">
+          <img src="Images/Items/SpecialOffer3.jpg" alt="Promo 3" />
+          <div class="promo-info">
+            <span class="promo-badge">30% OFF</span>
+            <h3 class="promo-name">Gemstone Bracelets</h3>
+            <a href="#" class="promo-btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="testimonials-section fade-in">
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say?</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <img
+              src="Images/Customers/Customer1.jpg"
+              alt="Customer"
+              class="customer-img"
+            />
+            <h4 class="customer-name">Sara Ahmad</h4>
+            <div class="stars">★★★★★</div>
+            <p class="customer-review">
+              Amazing products! The quality is top-notch and the delivery was
+              super fast.
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="Images/Customers/Customer2.jpg"
+              alt="Customer"
+              class="customer-img"
+            />
+            <h4 class="customer-name">Khalid Hussein</h4>
+            <div class="stars">★★★★★</div>
+            <p class="customer-review">
+              I'm always impressed with their service. Highly recommended!
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="Images/Customers/Customer3.jpg"
+              alt="Customer"
+              class="customer-img"
+            />
+            <h4 class="customer-name">Lina Barakat</h4>
+            <div class="stars">★★★★★</div>
+            <p class="customer-review">
+              Great value for money and the packaging is so beautiful!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="trending-products-section fade-in">
+      <div class="section-container">
+        <h2 class="trending-title">Trending Now</h2>
+        <div class="trending-items">
+          <div class="trending-item">
+            <span class="trending-badge hot-item"
+              ><i class="bx bxs-hot"></i> Hot</span
+            >
+            <img
+              src="Images/Items/Trendy1.jpg"
+              alt="Product 1"
+              class="item-image"
+            />
+            <div class="item-details">
+              <h4 class="item-name">Eco Bamboo Brush</h4>
+              <p class="item-price">$5.99</p>
+            </div>
+            <button class="item-button">Shop Now</button>
+          </div>
+
+          <div class="trending-item">
+            <span class="trending-badge new-item"
+              ><i class="bx bx-star"></i> New</span
+            >
+            <img
+              src="Images/Items/Trendy2.jpg"
+              alt="Product 2"
+              class="item-image"
+            />
+            <div class="item-details">
+              <h4 class="item-name">Stainless Steel Bottle</h4>
+              <p class="item-price">$10.50</p>
+            </div>
+            <button class="item-button">Shop Now</button>
+          </div>
+
+          <div class="trending-item">
+            <span class="trending-badge limited-item"
+              ><i class="bx bx-time"></i> Limited</span
+            >
+            <img
+              src="Images/Items/Trendy3.jpg"
+              alt="Product 3"
+              class="item-image"
+            />
+            <div class="item-details">
+              <h4 class="item-name">Anua Face Cleanser</h4>
+              <p class="item-price">$57.99</p>
+            </div>
+            <button class="item-button">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="product-categories fade-in">
+      <div class="container">
+        <div class="section-title">
+          <h2>Browse Our Categories</h2>
+        </div>
+        <div class="categories-wrapper">
+          <!-- Men's Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category1.jpg')"
+          >
+            <div class="overlay">
+              <h3>Men's Fashion</h3>
+              <p>Discover the latest trends</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Women's Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category2.jpg')"
+          >
+            <div class="overlay">
+              <h3>Women's Fashion</h3>
+              <p>Elegant & Stylish</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Kids' Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category3.jpg')"
+          >
+            <div class="overlay">
+              <h3>Kids' Collection</h3>
+              <p>For your little ones</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Beauty Products Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category4.jpg')"
+          >
+            <div class="overlay">
+              <h3>Beauty & Skincare</h3>
+              <p>Glow from within</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="categories-wrapper">
+          <!-- Home & Living -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category5.jpg')"
+          >
+            <div class="overlay">
+              <h3>Home & Living</h3>
+              <p>Make your home cozy</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Sports & Outdoors -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category6.jpg')"
+          >
+            <div class="overlay">
+              <h3>Sports & Outdoors</h3>
+              <p>Gear up for adventures</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Electronics -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category7.jpg')"
+          >
+            <div class="overlay">
+              <h3>Electronics</h3>
+              <p>Latest gadgets for you</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Beauty Products Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category8.jpg')"
+          >
+            <div class="overlay">
+              <h3>Health & Fitness</h3>
+              <p>Stay fit and healthy</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="categories-wrapper">
+          <!-- Shoes -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category9.jpg')"
+          >
+            <div class="overlay">
+              <h3>Shoes</h3>
+              <p>Perfect fit for every style</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Accessories Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category10.jpg')"
+          >
+            <div class="overlay">
+              <h3>Accessories</h3>
+              <p>Complement your look</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Bags & Luggage Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category11.jpg')"
+          >
+            <div class="overlay">
+              <h3>Bags & Luggage</h3>
+              <p>Travel in style</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Watches Category -->
+          <div
+            class="category-card"
+            style="background-image: url('Images/Categories/Category12.jpg')"
+          >
+            <div class="overlay">
+              <h3>Watches</h3>
+              <p>Timeless elegance</p>
+              <a href="#" class="category-btn"
+                >Shop Now <i class="bx bx-right-arrow-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="join-seller-section fade-in">
+      <div class="join-seller-container">
+        <div class="join-seller-text">
+          <h2>Got Products to Sell? ✨</h2>
+          <p>
+            Join our platform and start selling with ease. We provide you with
+            the tools to grow and succeed!
+          </p>
+          <a href="BecomeSeller.html" class="join-btn">Become a Seller</a>
+        </div>
+        <div class="join-seller-image">
+          <img src="Images/join-seller.jpg" alt="Join as Seller" />
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <!-- <section class="quiz-section fade-in">
+      <div class="quiz-container">
+        <div class="quiz-text">
+          <h2>Need Help Choosing?</h2>
+          <p>
+            Take our quick quiz to discover the perfect products tailored to
+            your skin type and preferences.
+          </p>
+          <a href="#" class="quiz-btn"
+            >Start the Quiz <i class="bx bx-right-arrow-alt"></i
+          ></a>
+        </div>
+        <div class="quiz-visual">
+          <img src="Quiz.png" alt="Quiz Illustration" />
+        </div>
+      </div>
+    </section> -->
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="flash-sale-section fade-in">
+      <div class="flash-sale-wrapper">
+        <div class="flash-sale-text">
+          <h2 class="flash-title">⚡ Flash Sale is Live!</h2>
+          <p class="flash-description">
+            Hurry up! Grab your favorite eco-products at up to 50% off before
+            the clock runs out.
+          </p>
+
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <span id="days">02</span><small>Days</small>
+            </div>
+            <div class="time-box">
+              <span id="hours">16</span><small>Hours</small>
+            </div>
+            <div class="time-box">
+              <span id="minutes">34</span><small>Minutes</small>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span><small>Seconds</small>
+            </div>
+          </div>
+
+          <a href="#" class="flash-btn"
+            >Shop Flash Deals <i class="bx bx-right-arrow-alt"></i
+          ></a>
+        </div>
+
+        <div class="flash-sale-image">
+          <img
+            src="SellerPage/SellerItems/item20.jpg"
+            alt="Flash Sale Product"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

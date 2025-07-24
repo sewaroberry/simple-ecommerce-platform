@@ -1,0 +1,1413 @@
+<html>
+  <head>
+    <title>Agozi | Homepage</title>
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .auth-links a {
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: opacity 0.35s;
+      }
+
+      .auth-links a:hover {
+        opacity: 0.8;
+      }
+
+      /* The Section */
+      /* Seller Summary Section */
+      .reviews-section {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        padding-top: 1rem;
+        border-radius: 16px;
+      }
+
+      .reviews-section h2 {
+        font-size: 2rem;
+        margin-bottom: 0.2rem;
+        color: #004d40;
+      }
+
+      .section-subtitle {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .review-card {
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      }
+
+      .review-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        background-color: #004d40;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .review-info strong {
+        font-size: 1rem;
+      }
+
+      .stars {
+        color: #ffc107;
+        font-size: 1.1rem;
+        margin: 2px 0;
+      }
+
+      .review-text {
+        margin: 0.8rem 0 1.2rem;
+        line-height: 1.5;
+        color: #333;
+      }
+
+      .review-actions {
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      .action-btn {
+        background-color: #eeeeee;
+        color: #333;
+        border: none;
+        padding: 0.4rem 0.9rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .action-btn.like:hover {
+        background-color: #d4edda;
+        color: #256029;
+      }
+
+      .action-btn.reply {
+        background-color: #004d40;
+        color: #fff;
+      }
+
+      .action-btn.reply:hover {
+        background-color: #00695c;
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="OrderManagement.html">Manage Orders</a>
+      </div>
+    </header>
+
+    <!-- Seller Dashboard Summary Section -->
+    <section class="reviews-section">
+      <h2>Customer Reviews & Ratings</h2>
+      <p class="section-subtitle">
+        See feedback on products, manage public replies.
+      </p>
+
+      <!-- Review 1 -->
+      <div class="review-card fade-in fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+      <!-- Review 1 -->
+      <div class="review-card fade-in fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+      <!-- Review 1 -->
+      <div class="review-card fade-in fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+      <!-- Review 1 -->
+      <div class="review-card fade-in fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">M</div>
+          <div class="review-info">
+            <strong>Maya R.</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 12, 2025 — Product: Skincare Set</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I got this skincare set as a gift and I’ve been using it for two weeks
+          now. The cleanser is gentle, the serum absorbs quickly, and the
+          moisturizer leaves my skin hydrated all day. I’ve even gotten
+          compliments on how glowy my skin looks! I wish the packaging was a bit
+          more eco-friendly though. Overall, I’m really happy with it.
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sami K.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 10, 2025 — Product: Bluetooth Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          These earbuds are a game-changer. The sound quality is crisp, bass is
+          punchy, and they fit so comfortably I forget I’m wearing them. Battery
+          life is impressive too — lasted me almost a full week with daily use.
+          Honestly didn’t expect this level of quality at this price point.
+          Highly recommended!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">D</div>
+          <div class="review-info">
+            <strong>Dalia M.</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 8, 2025 — Product: Ceramic Cookware Set</small>
+          </div>
+        </div>
+        <p class="review-text">
+          The cookware looks beautiful and heats evenly, but after a couple of
+          uses, I noticed slight discoloration on one of the pans. I followed
+          all the care instructions, so I was a little disappointed. Still, it
+          performs well and is super easy to clean. Just hoping it holds up long
+          term.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Nour A.</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 6, 2025 — Product: Mini Projector</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this mini projector for movie nights and it totally
+          delivered! It’s compact, easy to set up, and the image quality is way
+          better than I expected. Works well even with some ambient light.
+          Would’ve been 5 stars if the built-in speakers were louder, but I just
+          connected my Bluetooth speaker and it's perfect.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">M</div>
+          <div class="review-info">
+            <strong>Maya R.</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 12, 2025 — Product: Skincare Set</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I got this skincare set as a gift and I’ve been using it for two weeks
+          now. The cleanser is gentle, the serum absorbs quickly, and the
+          moisturizer leaves my skin hydrated all day. I’ve even gotten
+          compliments on how glowy my skin looks! I wish the packaging was a bit
+          more eco-friendly though. Overall, I’m really happy with it.
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sami K.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 10, 2025 — Product: Bluetooth Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          These earbuds are a game-changer. The sound quality is crisp, bass is
+          punchy, and they fit so comfortably I forget I’m wearing them. Battery
+          life is impressive too — lasted me almost a full week with daily use.
+          Honestly didn’t expect this level of quality at this price point.
+          Highly recommended!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">D</div>
+          <div class="review-info">
+            <strong>Dalia M.</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 8, 2025 — Product: Ceramic Cookware Set</small>
+          </div>
+        </div>
+        <p class="review-text">
+          The cookware looks beautiful and heats evenly, but after a couple of
+          uses, I noticed slight discoloration on one of the pans. I followed
+          all the care instructions, so I was a little disappointed. Still, it
+          performs well and is super easy to clean. Just hoping it holds up long
+          term.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Nour A.</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 6, 2025 — Product: Mini Projector</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this mini projector for movie nights and it totally
+          delivered! It’s compact, easy to set up, and the image quality is way
+          better than I expected. Works well even with some ambient light.
+          Would’ve been 5 stars if the built-in speakers were louder, but I just
+          connected my Bluetooth speaker and it's perfect.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">L</div>
+          <div class="review-info">
+            <strong>Lina Haddad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 17, 2025 — Product: Wireless Earbuds</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I’ve been using these wireless earbuds for almost two weeks now. The
+          audio clarity is really impressive, especially for the price. Bass is
+          punchy and the treble is clear without being harsh. They connect
+          quickly to my phone and don’t drop connection even during workouts.
+          Only downside is the packaging—it came a bit crushed, although the
+          product inside was safe. Overall, great buy!
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">K</div>
+          <div class="review-info">
+            <strong>Khalid N.</strong>
+            <div class="stars">★★★★★</div>
+            <small>Apr 16, 2025 — Product: Fitness Tracker Pro</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Absolutely loved it! Fast delivery and works perfectly.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">S</div>
+          <div class="review-info">
+            <strong>Sara Zayed</strong>
+            <div class="stars">★★★☆☆</div>
+            <small>Apr 15, 2025 — Product: Smart Mug</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I was really excited to try the Smart Mug since I drink coffee
+          throughout the day. The design is sleek and modern, but unfortunately
+          the temperature control feature didn’t work well. Sometimes it would
+          just stop heating without warning. The app was also a bit glitchy. I
+          contacted support and they were responsive, so I’ll see how the
+          replacement works. It has potential, but needs improvement.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">A</div>
+          <div class="review-info">
+            <strong>Ali Ahmad</strong>
+            <div class="stars">★★★★☆</div>
+            <small>Apr 14, 2025 — Product: LED Desk Lamp</small>
+          </div>
+        </div>
+        <p class="review-text">
+          I bought this LED desk lamp for my study corner, and I have to say it
+          really transformed the space. The light has multiple brightness
+          settings and color temperatures which makes it perfect for both
+          late-night reading and video calls. It even has a USB charging port
+          which is super handy. My only suggestion would be to add a
+          touch-sensitive control instead of buttons. Great value though!
+        </p>
+
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-card fade-in">
+        <div class="review-header">
+          <div class="avatar">N</div>
+          <div class="review-info">
+            <strong>Noor S.</strong>
+            <div class="stars">★★☆☆☆</div>
+            <small>Apr 13, 2025 — Product: Bluetooth Keyboard</small>
+          </div>
+        </div>
+        <p class="review-text">
+          Keys feel cheap and connection drops often. Wouldn’t recommend.
+        </p>
+        <div class="review-actions">
+          <button class="action-btn like">
+            <i class="bx bx-like"></i> Like
+          </button>
+          <button class="action-btn reply">
+            <i class="bx bx-message-dots"></i> Reply
+          </button>
+        </div>
+      </div>
+    </section>
+
+<!-- Pre-footer section -->
+<section class="info-section">
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new
+            collections and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.85 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

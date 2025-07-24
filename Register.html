@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Agozi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: '؛', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 115vh;
+      padding: 1rem;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+      animation: slideIn 0.7s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .register-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .register-header h2 {
+      color: #00796b;
+      font-size: 2.2rem;
+    }
+
+    .register-header p {
+      color: #555;
+      font-size: 1.07rem;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo i,
+    .logo h1 {
+      background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo i {
+      font-size: 3.5rem;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 1.3rem;
+      position: relative;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 1.1rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #00796b;
+      background-color: #fff;
+      outline: none;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: #00796b;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background: #004d40;
+    }
+
+    .bottom-text {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .bottom-text a {
+      color: #00796b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 3rem;
+      color: #777;
+    }
+
+    .footer a {
+      color: #00796b;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    .footer p {
+      margin-top: 10px;
+      color: #f1e9e9;
+    }
+
+    @media (max-width: 480px) {
+      .register-container {
+        padding: 2rem;
+      }
+    }
+
+    .conditions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+
+      font-size: 15px;
+
+      margin-bottom: 14px;
+    }
+
+    .conditions input[type="checkbox"] {
+      accent-color: #00796b;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="logo">
+    <i class='bx bx-gift'></i>
+    <h1>Agozi</h1>
+  </div> -->
+  <div class="register-container">
+    <div class="register-header">
+      <h2>Create Account</h2>
+      <p>Join us and shop the best collections!</p>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <i class='bx bx-user'></i>
+        <input type="text" id="name" name="name" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <i class='bx bx-envelope'></i>
+        <input type="email" id="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <i class='bx bx-lock'></i>
+        <input type="password" id="password" name="password" placeholder="Password" required />
+      </div>
+      <div class="form-group">
+        <i class='bx bx-lock-alt'></i>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required />
+      </div>
+
+      <div class="conditions">
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms" style="color: #555;">I agree to the <a href="#" style="color: #00796b; text-decoration: none;">Terms & Conditions</a></label>
+      </div>
+
+      <button type="submit" class="register-btn">Sign Up</button>
+    </form>
+
+    <div class="bottom-text">
+      Already have an account? <a href="Login.html">Login</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="#">Conditions of Use</a>
+    <a href="#">Privacy Notice</a>
+    <a href="#">Help</a>
+    <p>© 1996-2025, Agozi, Inc. or its affiliates</p>
+  </div>
+</body>
+</html>

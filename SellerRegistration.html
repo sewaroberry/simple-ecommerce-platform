@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Seller Account | Agozi</title>
+    
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f8f8f8;
+        color: #333;
+      }
+
+      a {
+        text-decoration: non;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+      }
+
+      /* 1. Hero Section */
+      .hero-register {
+        background: linear-gradient(135deg, #00796b, #67d6c4);
+        /* background-image: url(Images/hero-banner3.jpg); */
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero-register h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-register p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-register ul {
+        list-style: none;
+        padding: 0;
+        font-size: 1rem;
+      }
+
+      .hero-register li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* 2. Registration Form Section */
+      .seller-registration {
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        padding: 3rem 2rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .seller-registration h2 {
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+      }
+
+      form {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      label {
+        font-weight: 600;
+        color: #004d40;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 0.9rem 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+      }
+
+      input[type="submit"] {
+        background: linear-gradient(135deg, #004d40, #00796b);
+        color: white;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 1rem;
+      }
+
+      input[type="submit"]:hover {
+        opacity: 0.9;
+      }
+
+      /* 3. CTA Section */
+      .cta-seller-final {
+        background: linear-gradient(135deg, #00796b, #004d40);
+        color: #fff;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .cta-seller-final h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-seller-final p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-btn {
+        background: #ffffff;
+        color: #00796b;
+        text-decoration: none;
+        padding: 0.9rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        display: inline-block;
+      }
+
+      .cta-btn:hover {
+        background: #e0f2f1;
+      }
+
+      @media (max-width: 600px) {
+        .hero-register h1,
+        .cta-seller-final h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hedear Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <a href=""><i class="bx bx-search-alt-2"></i></a>
+        <a href="Login.html"><i class='bx bxs-user'></i></a>
+        <a href="#"><i class='bx bxs-cog' ></i></a>
+        <!-- <a href="RegisterPage.html">Login</a> -->
+        <!-- <a href="LoginPage.html">Login</a> -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-register">
+      <div class="container">
+        <h1>Start Selling with Confidence</h1>
+        <p>
+          Join thousands of successful sellers and grow your business with
+          Agozi.
+        </p>
+        <ul>
+          <li>🚀 Smart tools to manage your store</li>
+          <li>📦 Fast, reliable shipping options</li>
+          <li>📊 Detailed insights & analytics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seller Registration Form -->
+    <section class="seller-registration">
+      <div class="container">
+        <h2>Create Your Seller Account</h2>
+        <form>
+          <!-- Personal Info -->
+          <label>Full Name</label>
+          <input type="text" placeholder="e.g. John Doe" required />
+
+          <label>Email Address</label>
+          <input type="email" placeholder="example@agozi.com" required />
+
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+1234567890" required />
+
+          <!-- Store Info -->
+          <label>Store Name</label>
+          <input type="text" placeholder="Your Brand Name" required />
+
+          <label>Product Category</label>
+          <select required>
+            <option>Select a category</option>
+            <option>Fashion</option>
+            <option>Electronics</option>
+            <option>Home & Decor</option>
+            <option>Beauty & Health</option>
+            <option>Other</option>
+          </select>
+
+          <label>Store Description</label>
+          <textarea
+            rows="4"
+            placeholder="Tell us more about your store..."
+            required
+          ></textarea>
+
+          <!-- Extras -->
+          <label>Website or Social (Optional)</label>
+          <input type="url" placeholder="https://yourstore.com" />
+
+          <label>Do you have a commercial license?</label>
+          <select required>
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <input type="submit" value="Create Account" />
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-seller-final">
+      <div class="container">
+        <h2>Ready to launch your business?</h2>
+        <p>Agozi gives you everything you need to grow fast and sell smart.</p>
+        <a href="SellerPage/SellerMainPage.html" class="cta-btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Wireless Headphones | Agozi - Premium Online Shopping</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+      :root {
+        /* Color palette */
+        --primary-dark: #004d40;
+        --primary: #00796b;
+        --primary-light: #68a79f;
+        --accent: #b2dfdb;
+        --text-dark: #333;
+        --text-medium: #555;
+        --text-light: #888;
+        --bg-light: #f9f9f9;
+        --white: #ffffff;
+        --light-gray: #f0f0f0;
+        --border-radius: 12px;
+
+        /* Shadows */
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Utility Classes */
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--primary)
+        );
+        color: var(--white);
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* Product Page Styles */
+      .product-section {
+        padding: 4rem 0;
+      }
+
+      .product-container {
+        display: flex;
+        gap: 3rem;
+      }
+
+      .product-gallery {
+        flex: 1;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .thumbnail-container {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .thumbnail {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .thumbnail:hover {
+        border-color: var(--primary);
+      }
+
+      .thumbnail.active {
+        border-color: var(--primary);
+      }
+
+      .main-image-container {
+        flex: 1;
+        position: relative;
+      }
+
+      .main-image {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+        border-radius: var(--border-radius);
+        background-color: var(--white);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--primary);
+        color: var(--white);
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+      }
+
+      .product-badge.sale {
+        background: #e53935;
+      }
+
+      .product-badge.new {
+        background: #43a047;
+      }
+
+      .product-badge.hot {
+        background: #fb8c00;
+      }
+
+      .product-details {
+        flex: 1;
+        padding: 1rem;
+      }
+
+      .product-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .product-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .product-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .product-rating i {
+        color: #ffc107;
+        font-size: 1rem;
+      }
+
+      .product-rating span {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .product-review-count {
+        color: var(--primary);
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .product-price-container {
+        margin-bottom: 1.5rem;
+      }
+
+      .current-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+      }
+
+      .discount-percent {
+        color: #e53935;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-left: 0.5rem;
+      }
+
+      .product-stock {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        color: #43a047;
+        font-weight: 500;
+      }
+
+      .product-stock i {
+        font-size: 1.2rem;
+      }
+
+      .product-description {
+        margin-bottom: 2rem;
+        color: var(--text-medium);
+        line-height: 1.7;
+      }
+
+      .product-options {
+        margin-bottom: 2rem;
+      }
+
+      .option-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .option-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .color-options {
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      .color-option {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: var(--transition);
+      }
+
+      .color-option:hover {
+        transform: scale(1.1);
+      }
+
+      .color-option.selected {
+        border-color: var(--primary-dark);
+        transform: scale(1.1);
+      }
+
+      .size-options {
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      .size-option {
+        min-width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .size-option:hover {
+        border-color: var(--primary);
+      }
+
+      .size-option.selected {
+        background: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .quantity-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--light-gray);
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .quantity-btn:hover {
+        background: var(--primary-light);
+        color: var(--white);
+      }
+
+      .quantity-input {
+        width: 60px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+      }
+
+      .product-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .add-to-cart {
+        padding: 1rem 2rem;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .add-to-cart:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .wishlist-btn {
+        padding: 1rem;
+        background: var(--white);
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+
+      .wishlist-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .product-tabs {
+        margin-top: 4rem;
+      }
+
+      .tab-header {
+        display: flex;
+        border-bottom: 1px solid var(--light-gray);
+        margin-bottom: 2rem;
+        justify-content: space-evenly;
+      }
+
+      .tab-btn {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .tab-btn.active {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+
+      .tab-content {
+        display: none;
+        padding: 1.5rem;
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .tab-content li {
+        margin-left: 2.3rem;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .tab-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .specifications-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .specifications-table tr:nth-child(even) {
+        background: var(--bg-light);
+      }
+
+      .specifications-table th,
+      .specifications-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .specifications-table th {
+        width: 30%;
+        color: var(--primary-dark);
+      }
+
+      .review-card {
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .review-author {
+        font-weight: 600;
+      }
+
+      .review-date {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .review-rating {
+        color: #ffc107;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Related Products Section */
+      .related-products-section {
+        margin-top: 4rem;
+        padding: 3rem 3rem;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        color: var(--primary-dark);
+      }
+
+      .related-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+        /* background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4); */
+      }
+
+      .product-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .product-image-container {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.05);
+      }
+
+      .product-card-actions {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        transition: var(--transition);
+      }
+
+      .product-card:hover .product-card-actions {
+        bottom: 0;
+      }
+
+      .action-btn {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        border-radius: 50%;
+        color: var(--primary);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+      }
+
+      .action-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      .product-info {
+        padding: 1.5rem;
+      }
+
+      .product-category {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .product-card-title {
+        font-size: 1.1rem;
+        color: var(--primary-dark);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .product-card-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .product-card-rating i {
+        color: #ffc107;
+        font-size: 0.9rem;
+      }
+
+      .product-card-rating span {
+        font-size: 0.8rem;
+        color: var(--text-light);
+      }
+
+      .product-card-price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .product-card-current-price {
+        font-weight: 600;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .product-card-original-price {
+        text-decoration: line-through;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .product-card-discount {
+        color: #e53935;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .product-card-add-to-cart {
+        width: 100%;
+        padding: 0.7rem;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .product-card-add-to-cart:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background: var(--primary-dark);
+        color: var(--white);
+        padding: 3rem 0;
+      }
+
+      .newsletter-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .newsletter-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .newsletter-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .newsletter-form {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+      }
+
+      .newsletter-form button {
+        padding: 0 2rem;
+        border-radius: 30px;
+        border: none;
+        background: var(--primary);
+        color: var(--white);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        background: var(--primary-light);
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        min-height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .product-container {
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .section {
+          padding: 4rem 0;
+        }
+
+        .product-container {
+          flex-direction: column;
+        }
+
+        .product-gallery {
+          flex-direction: column-reverse;
+        }
+
+        .thumbnail-container {
+          width: 100%;
+          flex-direction: row;
+          order: 1;
+        }
+
+        .thumbnail {
+          height: 80px;
+        }
+
+        .main-image {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 80px);
+          background: var(--white);
+          box-shadow: var(--shadow-lg);
+          transition: var(--transition);
+          z-index: 999;
+          padding: 2rem;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        .product-title {
+          font-size: 1.8rem;
+        }
+
+        .product-actions {
+          flex-direction: column;
+        }
+
+        .add-to-cart,
+        .wishlist-btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section {
+          padding: 3rem 0;
+        }
+
+        .main-image {
+          height: 300px;
+        }
+
+        .thumbnail {
+          height: 60px;
+        }
+
+        .current-price {
+          font-size: 1.5rem;
+        }
+
+        .original-price {
+          font-size: 1rem;
+        }
+
+        .tab-header {
+          overflow-x: auto;
+          white-space: nowrap;
+          padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+          padding: 0.8rem 1rem;
+        }
+      }
+
+      .btn-text {
+        padding: 10px;
+        background-color: var(--primary);
+        color: var(--white);
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.35s;
+      }
+
+      .btn-text:hover {
+        background-color: var(--primary-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <!-- <a href=""><i class="bx bx-search-alt-2"></i></a> -->
+        <a href="Wishlist.html"><i class="bx bxs-heart"></i></a>
+        <a href="ShoppingBag.html"><i class="bx bx-shopping-bag"></i></a>
+        <a href="Profile.html"><i class='bx bxs-user-circle'></i></a>
+      </div>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-section">
+      <div class="container">
+        <div class="product-container">
+          <!-- Product Gallery -->
+          <div class="product-gallery">
+            <div class="thumbnail-container">
+              <img
+                src="Images/Items/Product1.jpg"
+                alt="Wireless Headphones"
+                class="thumbnail active"
+              />
+              <img
+                src="Images/Items/Product2.jpg"
+                alt="Wireless Headphones Side View"
+                class="thumbnail"
+              />
+              <img
+                src="Images/Items/Product3.jpg"
+                alt="Wireless Headphones Case"
+                class="thumbnail"
+              />
+              <img
+                src="Images/Items/Product4.jpg"
+                alt="Wireless Headphones Features"
+                class="thumbnail"
+              />
+            </div>
+            <div class="main-image-container">
+              <span class="product-badge sale">SALE</span>
+              <img
+                src="Images/Items/Product1.jpg"
+                alt="Premium Wireless Headphones with Noise Cancellation"
+                class="main-image"
+              />
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="product-details">
+            <h1 class="product-title">
+              Premium Wireless Headphones with Noise Cancellation
+            </h1>
+            <div class="product-meta">
+              <div class="product-rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span class="product-review-count">(128 reviews)</span>
+              </div>
+            </div>
+            <div class="product-price-container">
+              <span class="current-price">$89.99</span>
+              <span class="original-price">$129.99</span>
+              <span class="discount-percent">-30%</span>
+            </div>
+            <div class="product-stock">
+              <i class="bx bx-check-circle"></i>
+              <span>In Stock (Only 5 left)</span>
+            </div>
+            <p class="product-description">
+              Experience crystal-clear sound with our premium wireless headphones
+              featuring active noise cancellation technology. Perfect for music
+              lovers and frequent travelers, these headphones deliver immersive
+              audio with deep bass and crisp highs. Enjoy up to 30 hours of
+              playtime on a single charge with quick charging capability.
+            </p>
+
+            <!-- Product Options -->
+            <div class="product-options">
+              <div class="option-group">
+                <span class="option-title">Color:</span>
+                <div class="color-options">
+                  <div
+                    class="color-option selected"
+                    style="background-color: #000000"
+                    title="Black"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #c0c0c0"
+                    title="Silver"
+                  ></div>
+                  <div
+                    class="color-option"
+                    style="background-color: #8b4513"
+                    title="Brown"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <span class="option-title">Size:</span>
+                <div class="size-options">
+                  <div class="size-option selected">Standard</div>
+                  <div class="size-option">XL</div>
+                </div>
+              </div>
+
+              <div class="option-group">
+                <span class="option-title">Quantity:</span>
+                <div class="quantity-selector">
+                  <button class="quantity-btn minus">-</button>
+                  <input
+                    type="number"
+                    class="quantity-input"
+                    value="1"
+                    min="1"
+                    max="5"
+                  />
+                  <button class="quantity-btn plus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Actions -->
+            <div class="product-actions">
+              <button class="add-to-cart">
+                <i class="bx bx-cart"></i> Add to Cart
+              </button>
+              <button class="wishlist-btn" title="Add to Wishlist">
+                <i class="bx bx-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+          <div class="tab-header">
+            <button class="tab-btn active" data-tab="description">
+              Description
+            </button>
+            <button class="tab-btn" data-tab="specifications">
+              Specifications
+            </button>
+            <button class="tab-btn" data-tab="reviews">Reviews (128)</button>
+            <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+          </div>
+
+          <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>
+              Our Premium Wireless Headphones with Noise Cancellation redefine
+              your listening experience. Engineered with advanced acoustic
+              technology, these headphones deliver studio-quality sound with
+              deep, accurate bass response and crystal-clear highs.
+            </p>
+            <p>
+              The active noise cancellation feature uses microphones to analyze
+              ambient sound and generates an equal but opposite signal to cancel
+              out unwanted noise, allowing you to focus on your music or calls.
+            </p>
+            <p>
+              Features include:
+            </p>
+            <ul>
+              <li>Advanced noise cancellation technology</li>
+              <li>30-hour battery life with quick charge (5 mins = 4 hours)</li>
+              <li>Premium comfort with memory foam ear cushions</li>
+              <li>Built-in microphone for hands-free calls</li>
+              <li>Bluetooth 5.0 with 30ft wireless range</li>
+              <li>Foldable design with carrying case included</li>
+            </ul>
+          </div>
+
+          <div id="specifications" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <table class="specifications-table">
+              <tr>
+                <th>Brand</th>
+                <td>Agozi Premium</td>
+              </tr>
+              <tr>
+                <th>Model</th>
+                <td>WH-2023</td>
+              </tr>
+              <tr>
+                <th>Connectivity</th>
+                <td>Bluetooth 5.0, 3.5mm audio jack</td>
+              </tr>
+              <tr>
+                <th>Battery Life</th>
+                <td>Up to 30 hours (ANC on), 40 hours (ANC off)</td>
+              </tr>
+              <tr>
+                <th>Charging Time</th>
+                <td>2 hours (full charge), Quick Charge supported</td>
+              </tr>
+              <tr>
+                <th>Driver Size</th>
+                <td>40mm dynamic drivers</td>
+              </tr>
+              <tr>
+                <th>Frequency Response</th>
+                <td>20Hz - 20kHz</td>
+              </tr>
+              <tr>
+                <th>Weight</th>
+                <td>254g (without cable)</td>
+              </tr>
+              <tr>
+                <th>Dimensions</th>
+                <td>7.3 x 6.7 x 3.1 inches (folded)</td>
+              </tr>
+              <tr>
+                <th>Included Accessories</th>
+                <td>Carrying case, USB-C charging cable, 3.5mm audio cable</td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <div class="review-card">
+              <div class="review-header">
+                <span class="review-author">Michael Johnson</span>
+                <span class="review-date">October 12, 2023</span>
+              </div>
+              <div class="review-rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p>
+                These headphones exceeded all my expectations! The noise
+                cancellation is incredible - I can't hear anything on my commute.
+                The sound quality is crisp and balanced. Battery life is as
+                advertised. Worth every penny!
+              </p>
+            </div>
+            <div class="review-card">
+              <div class="review-header">
+                <span class="review-author">Sarah Williams</span>
+                <span class="review-date">September 28, 2023</span>
+              </div>
+              <div class="review-rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bx-star"></i>
+              </div>
+              <p>
+                Great headphones overall. The sound quality is excellent and the
+                noise cancellation works very well. My only minor complaint is
+                that they can get a bit warm after long listening sessions. But
+                the comfort is good and the battery lasts forever.
+              </p>
+            </div>
+            <button class="btn" style="margin-top: 1rem">
+              Write a Review
+            </button>
+          </div>
+
+          <div id="shipping" class="tab-content">
+            <h3>Shipping Information</h3>
+            <p>
+              We offer fast and reliable shipping options to get your order to
+              you as quickly as possible:
+            </p>
+            <ul>
+              <li>
+                <strong>Standard Shipping:</strong> 3-5 business days - FREE on
+                orders over $50
+              </li>
+              <li>
+                <strong>Express Shipping:</strong> 2 business days - $9.99
+              </li>
+              <li>
+                <strong>Overnight Shipping:</strong> Next business day - $19.99
+              </li>
+            </ul>
+            <h3 style="margin-top: 2rem">Returns Policy</h3>
+            <p>
+              We want you to be completely satisfied with your purchase. If
+              you're not happy with your product for any reason, you may return
+              it within 30 days of receipt for a full refund or exchange.
+            </p>
+            <p>
+              Items must be in original condition with all packaging and
+              accessories included. Please contact our customer service team to
+              initiate a return.
+            </p>
+          </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <div class="related-products-section">
+          <h2 class="section-title">Products You May Like</h2>
+          <div class="related-products">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <span class="product-badge new">NEW</span>
+              <div class="product-image-container">
+                <img
+                  src="SellerPage/SellerItems/item9.jpg"
+                  alt="Smart Watch"
+                  class="product-image"
+                />
+                <div class="product-card-actions">
+                  <button class="action-btn" title="Quick View">
+                    <i class="bx bx-search"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Wishlist">
+                    <i class="bx bx-heart"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Compare">
+                    <i class="bx bx-refresh"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Electronics</div>
+                <h3 class="product-card-title">
+                  Smart Fitness Watch with Heart Rate Monitor
+                </h3>
+                <div class="product-card-rating">
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <span>(256)</span>
+                </div>
+                <div class="product-card-price">
+                  <span class="product-card-current-price">$149.99</span>
+                </div>
+                <button class="product-card-add-to-cart">
+                  <i class="bx bx-cart"></i> Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+              <div class="product-image-container">
+                <img
+                  src="Images/Items/Item1.jpg"
+                  alt="Running Shoes"
+                  class="product-image"
+                />
+                <div class="product-card-actions">
+                  <button class="action-btn" title="Quick View">
+                    <i class="bx bx-search"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Wishlist">
+                    <i class="bx bx-heart"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Compare">
+                    <i class="bx bx-refresh"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Fashion</div>
+                <h3 class="product-card-title">
+                  Performance Running Shoes for Men
+                </h3>
+                <div class="product-card-rating">
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bx-star"></i>
+                  <span>(84)</span>
+                </div>
+                <div class="product-card-price">
+                  <span class="product-card-current-price">$79.99</span>
+                </div>
+                <button class="product-card-add-to-cart">
+                  <i class="bx bx-cart"></i> Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <span class="product-badge hot">HOT</span>
+              <div class="product-image-container">
+                <img
+                  src="Images/Items/Item2.jpg"
+                  alt="Backpack"
+                  class="product-image"
+                />
+                <div class="product-card-actions">
+                  <button class="action-btn" title="Quick View">
+                    <i class="bx bx-search"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Wishlist">
+                    <i class="bx bx-heart"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Compare">
+                    <i class="bx bx-refresh"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Accessories</div>
+                <h3 class="product-card-title">
+                  Travel Backpack with USB Charging Port
+                </h3>
+                <div class="product-card-rating">
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star-half"></i>
+                  <span>(192)</span>
+                </div>
+                <div class="product-card-price">
+                  <span class="product-card-current-price">$49.99</span>
+                  <span class="product-card-original-price">$59.99</span>
+                  <span class="product-card-discount">-16%</span>
+                </div>
+                <button class="product-card-add-to-cart">
+                  <i class="bx bx-cart"></i> Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+              <span class="product-badge sale">SALE</span>
+              <div class="product-image-container">
+                <img
+                  src="Images/Items/Item4.jpg"
+                  alt="Perfume"
+                  class="product-image"
+                />
+                <div class="product-card-actions">
+                  <button class="action-btn" title="Quick View">
+                    <i class="bx bx-search"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Wishlist">
+                    <i class="bx bx-heart"></i>
+                  </button>
+                  <button class="action-btn" title="Add to Compare">
+                    <i class="bx bx-refresh"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Beauty</div>
+                <h3 class="product-card-title">Luxury Eau De Parfum - 100ml</h3>
+                <div class="product-card-rating">
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <span>(312)</span>
+                </div>
+                <div class="product-card-price">
+                  <span class="product-card-current-price">$89.99</span>
+                  <span class="product-card-original-price">$120.00</span>
+                  <span class="product-card-discount">-25%</span>
+                </div>
+                <button class="product-card-add-to-cart">
+                  <i class="bx bx-cart"></i> Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // Mobile Navigation Toggle
+      const navToggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector("nav");
+
+      if (navToggle) {
+        navToggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      }
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
+
+      // Product Gallery Thumbnail Click
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      const mainImage = document.querySelector(".main-image");
+
+      thumbnails.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          // Remove active class from all thumbnails
+          thumbnails.forEach((t) => t.classList.remove("active"));
+          // Add active class to clicked thumbnail
+          thumb.classList.add("active");
+          // Change main image source
+          mainImage.src = thumb.src;
+        });
+      });
+
+      // Quantity Selector
+      const minusBtn = document.querySelector(".quantity-btn.minus");
+      const plusBtn = document.querySelector(".quantity-btn.plus");
+      const quantityInput = document.querySelector(".quantity-input");
+
+      minusBtn.addEventListener("click", () => {
+        let value = parseInt(quantityInput.value);
+        if (value > 1) {
+          quantityInput.value = value - 1;
+        }
+      });
+
+      plusBtn.addEventListener("click", () => {
+        let value = parseInt(quantityInput.value);
+        if (value < parseInt(quantityInput.max)) {
+          quantityInput.value = value + 1;
+        }
+      });
+
+      // Tab Switching
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons and contents
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          // Show corresponding content
+          const tabId = btn.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Color Option Selection
+      const colorOptions = document.querySelectorAll(".color-option");
+      colorOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          colorOptions.forEach((opt) => opt.classList.remove("selected"));
+          option.classList.add("selected");
+        });
+      });
+
+      // Size Option Selection
+      const sizeOptions = document.querySelectorAll(".size-option");
+      sizeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          sizeOptions.forEach((opt) => opt.classList.remove("selected"));
+          option.classList.add("selected");
+        });
+      });
+    </script>
+  </body>
+</html>

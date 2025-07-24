@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Shopping Bag | Agozi - Premium Online Shopping</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+      :root {
+        /* New Color palette with your gradient */
+        --gradient-primary: linear-gradient(
+          135deg,
+          #b2dfdb 10%,
+          #a5d6a7 40%,
+          #80cbc4
+        );
+        --primary-dark: #004d40;
+        --primary: #00796b;
+        --primary-light: #68a79f;
+        --accent: #b2dfdb;
+        --text-dark: #263238;
+        --text-medium: #546e7a;
+        --text-light: #90a4ae;
+        --bg-light: #f5f5f5;
+        --white: #ffffff;
+        --light-gray: #eceff1;
+        --border-radius: 16px;
+        --error-color: #ff5252;
+        --success-color: #4caf50;
+        --warning-color: #ff9800;
+
+        /* Shadows */
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Utility Classes */
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #80cbc4 10%, #a5d6a7 40%, #b2dfdb);
+        opacity: 0;
+        z-index: -1;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        color: var(--white);
+      }
+
+      .btn:hover::before {
+        opacity: 1;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary-dark);
+        border: 2px solid var(--primary);
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.35s;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-outline:hover {
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        /* border-color: transparent; */
+      }
+
+      /* Header Section*/
+      header {
+        background: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: var(--shadow-sm);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: var(--primary-dark);
+        font-weight: 600;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* Shopping Bag Hero Section */
+      .bag-hero {
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bag-hero::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+      }
+
+      .bag-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+      }
+
+      .bag-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .bag-hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Shopping Bag Section */
+      .bag-section {
+        padding: 4rem 0;
+        position: relative;
+      }
+
+      .bag-container {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 2rem;
+        margin-top: -50px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bag-items-container {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        padding: 2rem;
+      }
+
+      .bag-summary-container {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        padding: 2rem;
+        height: fit-content;
+        position: sticky;
+        top: 120px;
+      }
+
+      .bag-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .bag-title {
+        font-size: 2rem;
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .bag-title i {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .bag-count {
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .bag-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .bag-item {
+        display: flex;
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        position: relative;
+        border: 1px solid var(--light-gray);
+        padding: 1.5rem;
+      }
+
+      .bag-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .bag-item-image-container {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .bag-item-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .bag-item:hover .bag-item-image {
+        transform: scale(1.05);
+      }
+
+      .bag-item-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+      }
+
+      .bag-item-details {
+        flex: 1;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bag-item-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .bag-item-category {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+
+      .bag-item-title {
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .bag-item-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .bag-item-rating i {
+        color: #ffc107;
+        font-size: 0.9rem;
+      }
+
+      .bag-item-rating span {
+        font-size: 0.8rem;
+        color: var(--text-light);
+      }
+
+      .bag-item-price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .bag-item-current-price {
+        font-weight: 600;
+        color: var(--primary-dark);
+        font-size: 1.2rem;
+      }
+
+      .bag-item-original-price {
+        text-decoration: line-through;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .bag-item-discount {
+        color: var(--error-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .bag-item-stock {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: var(--border-radius);
+        width: fit-content;
+      }
+
+      .bag-item-stock.in-stock {
+        background: rgba(76, 175, 80, 0.1);
+        color: var(--success-color);
+      }
+
+      .bag-item-stock.out-of-stock {
+        background: rgba(255, 82, 82, 0.1);
+        color: var(--error-color);
+      }
+
+      .bag-item-stock i {
+        font-size: 1rem;
+      }
+
+      .bag-item-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: auto;
+      }
+
+      .bag-item-remove {
+        background: none;
+        border: 1px solid var(--light-gray);
+        color: var(--text-light);
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+
+      .bag-item-remove:hover {
+        background: rgba(255, 82, 82, 0.1);
+        color: var(--error-color);
+        border-color: var(--error-color);
+      }
+
+      .bag-item-move-to-wishlist {
+        background: none;
+        border: 1px solid var(--light-gray);
+        color: var(--text-light);
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+
+      .bag-item-move-to-wishlist:hover {
+        background: rgba(178, 223, 219, 0.1);
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .quantity-btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--light-gray);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .quantity-btn:hover {
+        background: var(--primary-light);
+        color: var(--white);
+      }
+
+      .quantity-input {
+        width: 50px;
+        text-align: center;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        padding: 0.5rem;
+        font-weight: 600;
+      }
+
+      /* Order Summary */
+      .order-summary-title {
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .order-summary-title i {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .summary-row:last-child {
+        border-bottom: none;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0;
+      }
+
+      .summary-row.total {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--primary-dark);
+      }
+
+      .checkout-btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+      }
+
+      .payment-methods {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        justify-content: center;
+      }
+
+      .payment-method {
+        width: 50px;
+        height: 30px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: var(--transition);
+      }
+
+      .payment-method:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* Floating Bubbles Background */
+      .floating-bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .bubble {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: var(--gradient-primary);
+        opacity: 0.15;
+        border-radius: 50%;
+        animation: float 15s linear infinite;
+        bottom: -20px;
+      }
+
+      .bubble:nth-child(1) {
+        left: 25%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
+
+      .bubble:nth-child(2) {
+        left: 10%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+
+      .bubble:nth-child(3) {
+        left: 70%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 4s;
+      }
+
+      .bubble:nth-child(4) {
+        left: 40%;
+        width: 18px;
+        height: 18px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
+
+      .bubble:nth-child(5) {
+        left: 65%;
+        width: 22px;
+        height: 22px;
+        animation-delay: 0s;
+      }
+
+      .bubble:nth-child(6) {
+        left: 75%;
+        width: 16px;
+        height: 16px;
+        animation-delay: 3s;
+      }
+
+      .bubble:nth-child(7) {
+        left: 35%;
+        width: 30px;
+        height: 30px;
+        animation-delay: 7s;
+      }
+
+      .bubble:nth-child(8) {
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        animation-delay: 15s;
+        animation-duration: 20s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.15;
+          bottom: -20px;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(720deg);
+          opacity: 0;
+          bottom: 100%;
+        }
+      }
+
+      /* Empty Bag State */
+      .bag-empty {
+        text-align: center;
+        padding: 4rem 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bag-empty-icon {
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .bag-empty-title {
+        font-size: 2rem;
+        color: var(--primary-dark);
+        margin-bottom: 1rem;
+      }
+
+      .bag-empty-text {
+        color: var(--text-medium);
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .bag-container {
+          grid-template-columns: 1fr;
+        }
+
+        .bag-summary-container {
+          position: static;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .section {
+          padding: 4rem 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 80px);
+          background: var(--white);
+          box-shadow: var(--shadow-lg);
+          transition: var(--transition);
+          z-index: 999;
+          padding: 2rem;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        .bag-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .bag-item {
+          flex-direction: column;
+          padding: 1rem;
+        }
+
+        .bag-item-image-container {
+          width: 100%;
+          height: 200px;
+          margin-bottom: 1rem;
+        }
+
+        .bag-item-details {
+          padding: 0;
+        }
+
+        .bag-item-actions {
+          flex-direction: column;
+        }
+
+        .bag-item-remove,
+        .bag-item-move-to-wishlist {
+          width: 100%;
+        }
+
+        .bag-hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section {
+          padding: 3rem 0;
+        }
+
+        .bag-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .bag-hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <!-- <a href=""><i class="bx bx-search-alt-2"></i></a> -->
+        <a href="Wishlist.html"><i class="bx bxs-heart"></i></a>
+        <a href="ShoppingBag.html"><i class="bx bx-shopping-bag"></i></a>
+        <a href="Profile.html"><i class='bx bxs-user-circle'></i></a>
+      </div>
+    </header>
+
+    <!-- Shopping Bag Hero Section -->
+    <section class="bag-hero">
+      <div class="container">
+        <h1>Your Shopping Bag</h1>
+        <p>
+          Review your items before checkout. Ready to complete your purchase?
+        </p>
+      </div>
+      <div class="floating-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </section>
+
+    <!-- Shopping Bag Section -->
+    <section class="bag-section">
+      <div class="container">
+        <div class="bag-container">
+          <!-- Bag Items -->
+          <div class="bag-items-container">
+            <div class="bag-header">
+              <h1 class="bag-title">
+                <i class="bx bx-shopping-bag"></i> My Shopping Bag
+                <span class="bag-count">3 items</span>
+              </h1>
+              <a href="AllProducts.html">
+                  <button class="btn-outline">
+                    <i class="bx bx-arrow-back"></i> Continue Shopping
+                  </button>
+              </a>
+            </div>
+
+            <div class="bag-grid">
+              <!-- Product 1 -->
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping1.jpg"
+                    alt="Wireless Headphones"
+                    class="bag-item-image"
+                  />
+                  <span class="bag-item-badge">-30%</span>
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Kids Fasion</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Barbi Baby Sweater
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star-half"></i>
+                    <span>(128)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$39.99</span>
+                    <span class="bag-item-original-price">$59.99</span>
+                    <span class="bag-item-discount">-30%</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock (Only 5 left)</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping2.jpg"
+                    alt="Smart Watch"
+                    class="bag-item-image"
+                  />
+                  <span class="bag-item-badge">NEW</span>
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Kids Fashion</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Kids Mickey Mouse Denim Jacket
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(256)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$59.99</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping3.jpg"
+                    alt="Smart Watch"
+                    class="bag-item-image"
+                  />
+                  <span class="bag-item-badge">NEW</span>
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Mens Fashion</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Men White & Pink Shirt
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(256)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$69.99</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping4.jpg"
+                    alt="Smart Watch"
+                    class="bag-item-image"
+                  />
+                  <span class="bag-item-badge">NEW</span>
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Sports & Shoes</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Sporty Shoes
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(256)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$109.99</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping5.jpg"
+                    alt="Smart Watch"
+                    class="bag-item-image"
+                  />
+                  <span class="bag-item-badge">NEW</span>
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Bags</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Denim Bag
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(256)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$49.99</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="bag-item">
+                <div class="bag-item-image-container">
+                  <img
+                    src="Images/Items/Shopping6.jpg"
+                    alt="Yoga Mat"
+                    class="bag-item-image"
+                  />
+                </div>
+                <div class="bag-item-details">
+                  <div class="bag-item-header">
+                    <span class="bag-item-category">Sports</span>
+                    <button class="bag-item-remove">
+                      <i class="bx bx-trash"></i> Remove
+                    </button>
+                  </div>
+                  <h3 class="bag-item-title">
+                    Blue Men's Jacket
+                  </h3>
+                  <div class="bag-item-rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star-half"></i>
+                    <span>(143)</span>
+                  </div>
+                  <div class="bag-item-price">
+                    <span class="bag-item-current-price">$139.99</span>
+                  </div>
+                  <div class="bag-item-stock in-stock">
+                    <i class="bx bx-check-circle"></i>
+                    <span>In Stock</span>
+                  </div>
+
+                  <div class="quantity-selector">
+                    <button class="quantity-btn">
+                      <i class="bx bx-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      value="2"
+                      min="1"
+                      class="quantity-input"
+                    />
+                    <button class="quantity-btn">
+                      <i class="bx bx-plus"></i>
+                    </button>
+                  </div>
+
+                  <div class="bag-item-actions">
+                    <button class="bag-item-move-to-wishlist">
+                      <i class="bx bxs-heart"></i> Move to Wishlist
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="bag-summary-container">
+            <h2 class="order-summary-title">
+              <i class="bx bx-receipt"></i> Order Summary
+            </h2>
+
+            <div class="summary-row">
+              <span>Subtotal (7 items)</span>
+              <span>$479.97</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Tax</span>
+              <span>$16.80</span>
+            </div>
+
+            <div class="summary-row total">
+              <span>Total</span>
+              <span>$496.77</span>
+            </div>
+
+            <a href="Payment.html">
+                <button class="btn checkout-btn">
+                  <i class="bx bx-lock-alt"></i> Proceed to Checkout
+                </button>
+            </a>
+
+            <div class="payment-methods">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
+                alt="Visa"
+                class="payment-method"
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196561.png"
+                alt="Mastercard"
+                class="payment-method"
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/196/196566.png"
+                alt="American Express"
+                class="payment-method"
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/825/825454.png"
+                alt="PayPal"
+                class="payment-method"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

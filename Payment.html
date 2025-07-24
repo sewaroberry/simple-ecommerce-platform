@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment | Agozi - Premium Online Shopping</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+      :root {
+        /* New Color palette with your gradient */
+        --gradient-primary: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        --primary-dark: #004d40;
+        --primary: #00796b;
+        --primary-light: #68a79f;
+        --accent: #b2dfdb;
+        --text-dark: #263238;
+        --text-medium: #546e7a;
+        --text-light: #90a4ae;
+        --bg-light: #f5f5f5;
+        --white: #ffffff;
+        --light-gray: #eceff1;
+        --border-radius: 16px;
+        --error-color: #ff5252;
+        --success-color: #4caf50;
+        --warning-color: #ff9800;
+
+        /* Shadows */
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Utility Classes */
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #80cbc4 10%, #a5d6a7 40%, #b2dfdb);
+        opacity: 0;
+        z-index: -1;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        color: var(--white);
+      }
+
+      .btn:hover::before {
+        opacity: 1;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary-dark);
+        border: 2px solid var(--primary);
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.35s;
+        font-size: 1.0rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-outline:hover {
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+      }
+
+      /* Header Section*/
+      header {
+        background: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: var(--shadow-sm);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: var(--primary-dark);
+        font-weight: 600;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* Payment Hero Section */
+      .payment-hero {
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .payment-hero::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+      }
+
+      .payment-hero::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+      }
+
+      .payment-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .payment-hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Payment Section */
+      .payment-section {
+        padding: 4rem 0;
+        position: relative;
+      }
+
+      .payment-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: -50px;
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (max-width: 992px) {
+        .payment-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .payment-card-container,
+      .payment-form-container {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        padding: 2rem;
+      }
+
+      .payment-form-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Card Display - Customized from your code */
+      .card-wrapper {
+        width: 100%;
+        max-width: 400px;
+        height: 240px;
+        perspective: 1000px;
+        margin: 0 auto;
+      }
+
+      .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+      }
+
+      .card-wrapper:hover .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        padding: 20px;
+        color: var(--white);
+        backface-visibility: hidden;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .front-face header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .card-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .card-logo i {
+        font-size: 2rem;
+        margin-right: 10px;
+        color: var(--white);
+      }
+
+      .card-logo h5 {
+        font-size: 1.2rem;
+      }
+
+      .chip {
+        width: 50px;
+        height: 40px;
+        background-color: #ffc107;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .chip::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.8) 50%,
+          rgba(255, 255, 255, 0.2) 100%
+        );
+        transform: rotate(45deg);
+      }
+
+      .card-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .card-details h6 {
+        font-size: 0.7rem;
+        font-weight: 300;
+        opacity: 0.8;
+        margin-bottom: 5px;
+      }
+
+      .card-details h5 {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .card-number {
+        font-family: 'Courier New', monospace;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+      }
+
+      .back-face {
+        background: linear-gradient(135deg, #002a23, #004d40);
+        transform: rotateY(180deg);
+      }
+
+      .magnetic-strip {
+        background: #000;
+        height: 40px;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .signature {
+        background: repeating-linear-gradient(#fff, #fff 3px, #eee 3px, #eee 6px);
+        width: 85%;
+        height: 30px;
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 8px;
+      }
+
+      .signature i {
+        color: #000;
+        font-style: normal;
+        font-size: 12px;
+        background: #fff;
+        padding: 3px 6px;
+        border-radius: 4px;
+      }
+
+      .back-face .info {
+        font-size: 0.6rem;
+        color: #ddd;
+        margin-top: 10px;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      /* Payment Form */
+      .payment-form-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.5rem;
+      }
+
+      .payment-form-title h2 {
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+      }
+
+      .payment-form-title i {
+        font-size: 2rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .payment-methods {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .payment-method {
+        width: 60px;
+        height: 40px;
+        border: 1px solid var(--light-gray);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .payment-method img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: var(--transition);
+      }
+
+      .payment-method.active {
+        border-color: var(--primary);
+      }
+
+      .payment-method.active img {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-medium);
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.2);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .btn-pay {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        background: var(--gradient-primary);
+        color: var(--primary-dark);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-pay::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-dark);
+        opacity: 0;
+        z-index: -1;
+        transition: var(--transition);
+      }
+
+      .btn-pay:hover {
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-pay:hover::before {
+        opacity: 1;
+      }
+
+      .order-summary {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--light-gray);
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+      }
+
+      .summary-row.total {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--primary-dark);
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--light-gray);
+      }
+
+      /* Floating Bubbles Background */
+      .floating-bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .bubble {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: var(--gradient-primary);
+        opacity: 0.15;
+        border-radius: 50%;
+        animation: float 15s linear infinite;
+        bottom: -20px;
+      }
+
+      .bubble:nth-child(1) {
+        left: 25%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
+
+      .bubble:nth-child(2) {
+        left: 10%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+
+      .bubble:nth-child(3) {
+        left: 70%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 4s;
+      }
+
+      .bubble:nth-child(4) {
+        left: 40%;
+        width: 18px;
+        height: 18px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
+
+      .bubble:nth-child(5) {
+        left: 65%;
+        width: 22px;
+        height: 22px;
+        animation-delay: 0s;
+      }
+
+      .bubble:nth-child(6) {
+        left: 75%;
+        width: 16px;
+        height: 16px;
+        animation-delay: 3s;
+      }
+
+      .bubble:nth-child(7) {
+        left: 35%;
+        width: 30px;
+        height: 30px;
+        animation-delay: 7s;
+      }
+
+      .bubble:nth-child(8) {
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        animation-delay: 15s;
+        animation-duration: 20s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.15;
+          bottom: -20px;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(720deg);
+          opacity: 0;
+          bottom: 100%;
+        }
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 80px);
+          background: var(--white);
+          box-shadow: var(--shadow-lg);
+          transition: var(--transition);
+          z-index: 999;
+          padding: 2rem;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        .payment-hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section {
+          padding: 3rem 0;
+        }
+
+        .payment-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .payment-hero p {
+          font-size: 1rem;
+        }
+      }
+
+      .security-info {
+        margin-top: 24px;
+      }
+
+      .security-info>p {
+        margin-bottom: 36px;
+      }
+
+      .security-info>ul {
+        margin-left: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <!-- <a href=""><i class="bx bx-search-alt-2"></i></a> -->
+        <a href="Wishlist.html"><i class="bx bxs-heart"></i></a>
+        <a href="ShoppingBag.html"><i class="bx bx-shopping-bag"></i></a>
+        <a href="Profile.html"><i class='bx bxs-user-circle'></i></a>
+      </div>
+    </header>
+
+    <!-- Payment Hero Section -->
+    <section class="payment-hero">
+      <div class="container">
+        <h1>Secure Payment</h1>
+        <p>Complete your purchase with our safe and encrypted payment process</p>
+      </div>
+      <div class="floating-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+      <div class="container">
+        <div class="payment-container">
+          <!-- Card Display -->
+          <div class="payment-card-container">
+            <h2>Bring Your Payment Card</h2>
+            <p class="subtitle">Hover to see the back side</p>
+            
+            <div class="card-wrapper">
+              <div class="card-inner">
+                <!-- Front -->
+                <div class="card front-face">
+                  <header>
+                    <div class="card-logo">
+                      <i class='bx bx-credit-card'></i>
+                      <h5>Master Card</h5>
+                    </div>
+                    <div class="chip"></div>
+                  </header>
+                  
+                  <div class="card-number">8050 2030 3020 5040</div>
+                  
+                  <div class="card-details">
+                    <div>
+                      <h6>Cardholder Name</h6>
+                      <h5>Prem Kumar Shahi</h5>
+                    </div>
+                    <div>
+                      <h6>Valid Thru</h6>
+                      <h5>05/28</h5>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Back -->
+                <div class="card back-face">
+                  <div class="magnetic-strip"></div>
+                  <div class="signature"><i>005</i></div>
+                  <div class="info">
+                    For customer service call +977 4343 3433 or email at mastercard@gmail.com
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="security-info">
+              <p><i class='bx bx-lock-alt'></i> Your payment information is encrypted and secure</p>
+
+              <ul>
+                <li>Cardholder Name: This is your name printed on the front of the card (e.g., Sarah Smith).</li>
+                <li>Card Number: The 16-digit number on the front of the card (e.g., 1234 5678 9012 3456).</li>
+                <li>Expiration Date (MM/YY): Also on the front of the card, usually below the card number (e.g., 04/25).</li>
+                <li>CVV: A 3-digit security code on the back of the card (sometimes 4 digits on the front for American Express).</li>
+              </ol>
+            </div>
+          </div>
+          
+          <!-- Payment Form -->
+          <div class="payment-form-container">
+            <div class="payment-form-title">
+              <i class='bx bx-credit-card'></i>
+              <h2>Payment Details</h2>
+            </div>
+            
+            <div class="payment-methods">
+              <div class="payment-method active">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+              </div>
+              <div class="payment-method">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+              </div>
+              <div class="payment-method">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="American Express">
+              </div>
+              <div class="payment-method">
+                <img src="https://cdn-icons-png.flaticon.com/512/825/825454.png" alt="PayPal">
+              </div>
+            </div>
+            
+            <form>
+              <div class="form-group">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" placeholder="e.g. Sarah Smith" required />
+              </div>
+              
+              <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-expiry">Expiration Date</label>
+                  <input type="text" id="card-expiry" placeholder="MM/YY" required />
+                </div>
+                
+                <div class="form-group">
+                  <label for="card-cvv">CVV</label>
+                  <input type="password" id="card-cvv" placeholder="123" required />
+                </div>
+              </div>
+              
+              <button class="btn-pay" type="submit">
+                <i class='bx bx-lock-alt'></i> Pay $496.77
+              </button>
+            </form>
+            
+            <div class="order-summary">
+              <h3>Order Summary</h3>
+              
+              <div class="summary-row">
+                <span>Subtotal (7 items)</span>
+                <span>$479.97</span>
+              </div>
+              
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span>Free</span>
+              </div>
+              
+              <div class="summary-row">
+                <span>Tax</span>
+                <span>$16.80</span>
+              </div>
+              
+              <div class="summary-row total">
+                <span>Total</span>
+                <span>$496.77</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+
+      // Payment method selection
+      document.querySelectorAll('.payment-method').forEach(method => {
+        method.addEventListener('click', function() {
+          document.querySelectorAll('.payment-method').forEach(m => {
+            m.classList.remove('active');
+          });
+          this.classList.add('active');
+        });
+      });
+
+      // Card number formatting
+      const cardNumberInput = document.getElementById('card-number');
+      if (cardNumberInput) {
+        cardNumberInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+          let formatted = '';
+          
+          for (let i = 0; i < value.length; i++) {
+            if (i > 0 && i % 4 === 0) {
+              formatted += ' ';
+            }
+            formatted += value[i];
+          }
+          
+          e.target.value = formatted;
+        });
+      }
+
+      // Expiry date formatting
+      const expiryInput = document.getElementById('card-expiry');
+      if (expiryInput) {
+        expiryInput.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\D/g, '');
+          
+          if (value.length > 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+          }
+          
+          e.target.value = value;
+        });
+      }
+    </script>
+  </body>
+</html>

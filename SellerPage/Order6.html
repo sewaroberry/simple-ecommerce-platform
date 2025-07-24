@@ -1,0 +1,639 @@
+<html>
+  <head>
+    <title>Agozi | Homepage</title>
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      /* Order Section */
+      /* ------------------------------- */
+      .order-details-container {
+        max-width: 1000px;
+        margin: 4rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .order-details-container h2 {
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 2rem;
+      }
+
+      .detail-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .order-items {
+        margin-top: 1.5rem;
+      }
+
+      .order-items h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .order-items table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .order-items th,
+      .order-items td {
+        padding: 0.8rem;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      .order-items th {
+        background-color: #f0f0f0;
+        font-weight: 600;
+      }
+
+      .order-note {
+        margin-top: 2rem;
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-left: 4px solid #00796b;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #333;
+      }
+
+      .order-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .confirm-btn,
+      .print-btn {
+        padding: 0.6rem 1.3rem;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background 0.3s ease;
+      }
+
+      .confirm-btn {
+        background-color: #00796b;
+      }
+
+      .confirm-btn:hover {
+        background-color: #004d40;
+      }
+
+      .print-btn {
+        background-color: #6d4c41;
+      }
+
+      .print-btn:hover {
+        background-color: #4e342e;
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .page-btn {
+        padding: 0.6rem 1.4rem;
+        border-radius: 30px;
+        border: none;
+        background-color: #00796b;
+        color: white;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .prev {
+        background-color: #333;
+        transition: opacity 0.4s;
+      }
+
+      .prev:hover {
+        opacity: 0.8;
+      }
+
+      .next:hover:not(:disabled) {
+        background-color: #004d40;
+      }
+
+      .prev:hover:not(:disabled) {
+        opacity: 0.8;
+      }
+
+      .page-btn:disabled {
+        background-color: #bdbdbd;
+        cursor: not-allowed;
+      }
+
+      .product-thumb {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+
+      .status-badge {
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-left: 8px;
+      }
+
+      .status-badge.pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .status-badge.shipped {
+        background: #d1ecf1;
+        color: #0c5460;
+      }
+
+      .status-badge.delivered {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .status-badge.cancelled {
+        background: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hedear Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="head-i">
+        <i class="bx bx-search-alt-2"></i>
+        <a href="SellerMainPage.html"><i class='bx bxs-user-circle'></i></a>
+        <a href="#"><i class='bx bxs-cog' ></i></a>
+      </div>
+    </header>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <!-- This is the replicated order details page for Order #10235 -->
+    <!-- Based on the structure of the approved order page for Order #10234 -->
+
+    <!-- Replace this block inside your HTML body after the first order section to display second order -->
+
+    <!-- Order Details Container -->
+    <div class="order-details-container fade-in">
+      <h2>Order #10236 Details</h2>
+
+      <!-- Customer Info -->
+      <div class="order-items">
+        <h3>Customer Details</h3>
+      </div>
+      <div class="detail-row">
+        <div><strong>Customer Name:</strong> Lina Haddad</div>
+        <div><strong>Email:</strong> lina.haddad@example.com</div>
+        <div><strong>Phone:</strong> +962 7 8845 2291</div>
+      </div>
+
+      <!-- Shipping Info -->
+      <div class="order-items">
+        <h3>Shipping Details</h3>
+      </div>
+      <div class="detail-row">
+        <div>
+          <strong>Shipping Address:</strong> 52 Rainbow Street, Amman, Jordan
+        </div>
+        <div><strong>Order Date:</strong> Apr 17, 2025</div>
+        <div>
+          <strong>Status: </strong>
+          <span class="status-badge pending">
+            <i class="bx bx-time"></i> Pending
+          </span>
+        </div>
+      </div>
+
+      <!-- Order Items -->
+      <div class="order-items">
+        <h3>Items</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Image</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Aroma Scented Candle Set</td>
+              <td>
+                <img
+                  src="SellerItems/item6.jpg"
+                  alt="Candle"
+                  class="product-thumb"
+                />
+              </td>
+              <td>2</td>
+              <td>$39.50</td>
+              <td>$79.00</td>
+            </tr>
+            <tr>
+              <td>Bluetooth Speaker</td>
+              <td>
+                <img
+                  src="SellerItems/item3.jpg"
+                  alt="Speaker"
+                  class="product-thumb"
+                />
+              </td>
+              <td>1</td>
+              <td>$79.99</td>
+              <td>$79.99</td>
+            </tr>
+            <tr>
+              <td>Reusable Water Bottle</td>
+              <td>
+                <img
+                  src="SellerItems/item4.jpg"
+                  alt="Bottle"
+                  class="product-thumb"
+                />
+              </td>
+              <td>2</td>
+              <td>$40.00</td>
+              <td>$80.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Notes -->
+      <div class="order-note">
+        <strong>Customer Note:</strong>
+        <p>Gift wrap the candle set, please.</p>
+      </div>
+
+      <!-- Actions -->
+      <div class="order-actions">
+        <button class="confirm-btn">
+          <i class="bx bx-check-circle"></i> Confirm Order
+        </button>
+        <button class="print-btn">
+          <i class="bx bx-printer"></i> Print Invoice
+        </button>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <a class="page-btn prev" href="Order5.html">
+          <i class="bx bx-left-arrow-alt"></i> Previous
+        </a>
+        <a class="page-btn next" href="Order7.html">
+          Next <i class="bx bx-right-arrow-alt"></i>
+        </a>
+      </div>
+    </div>
+
+    <!--  -->
+    <!--  -->
+    <!-- Pre-footer section -->
+    <section class="info-section">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

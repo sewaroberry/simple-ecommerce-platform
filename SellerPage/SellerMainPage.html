@@ -1,0 +1,1104 @@
+<html>
+  <head>
+    <title>Agozi | Homepage</title>
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS style -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Section*/
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .head-i {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .head-i i {
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+
+      .head-i i:hover {
+        color: #004d40;
+        -webkit-text-fill-color: #004d40;
+      }
+
+      .auth-links a {
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: opacity 0.35s;
+      }
+
+      .auth-links a:hover {
+        opacity: 0.8;
+      }
+
+      /* Second Section */
+      /* ---------------------------------------------- */
+      .seller-summary {
+        min-height: 88vh;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .summary-inner {
+        max-width: 1100px;
+        width: 100%;
+      }
+
+      .summary-header {
+        margin-bottom: 2.5rem;
+      }
+
+      .summary-header h2 {
+        font-size: 1.9rem;
+        color: #00796b;
+        margin-bottom: 0.5rem;
+      }
+
+      .summary-header p {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .summary-container {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .summary-card {
+        flex: 1 1 220px;
+        min-width: 200px;
+        background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+        padding: 1.8rem 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .summary-card i {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 0.8rem;
+      }
+
+      .summary-card h3 {
+        font-size: 1.8rem;
+        color: #004d40;
+        margin-bottom: 0.3rem;
+      }
+
+      .summary-card p {
+        color: #555;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+
+      .summary-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Third Section */
+      /* ------------------------------------------ */
+      .seller-profile {
+        min-height: 88vh;
+        /* max-height: 100vh; */
+        /* overflow-y: auto; */
+        padding: 2rem;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .profile-container {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        width: 100%;
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      }
+
+      .profile-pic-wrapper {
+        flex: 1;
+        min-width: 220px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .profile-pic img {
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #00796b;
+      }
+
+      .upload-btn {
+        margin-top: 0.4rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+        background: #00796b;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .upload-btn:hover {
+        background: #004d40;
+      }
+
+      .profile-form-container {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        color: #00796b;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .profile-form {
+        width: 100%;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .form-group {
+        flex: 1;
+        margin-bottom: 1.2rem;
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      .profile-form label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .profile-form input {
+        width: 100%;
+        padding: 0.65rem 1rem;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background: #f7f7f7;
+      }
+
+      .profile-form input:focus {
+        border-color: #00796b;
+        outline: none;
+      }
+
+      .save-btn {
+        margin-top: 1rem;
+        padding: 0.75rem 2rem;
+        background: linear-gradient(135deg, #004d40, #00796b);
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .save-btn:hover {
+        transform: scale(1.03);
+      }
+
+      /* Fourth Section */
+      /* ------------------------------------ */
+      .product-management {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        min-height: 88vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .product-management-inner {
+        width: 100%;
+        max-width: 1100px;
+      }
+
+      .product-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .product-header h2 {
+        font-size: 2rem;
+        color: #00796b;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-header p {
+        color: #555;
+        font-size: 1rem;
+      }
+
+      .add-product-btn {
+        margin-top: 1rem;
+        background: #00796b;
+        color: #fff;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        font-weight: 600;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .add-product-btn:hover {
+        background: #004d40;
+      }
+
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 1rem;
+        flex: 1;
+      }
+
+      .product-info h3 {
+        font-size: 1.1rem;
+        color: #00796b;
+        margin-bottom: 0.3rem;
+      }
+
+      .product-info .price {
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .product-info .stock {
+        font-size: 0.9rem;
+      }
+
+      .stock.in-stock {
+        color: #2e7d32;
+      }
+
+      .stock.out-of-stock {
+        color: #c62828;
+      }
+
+      .product-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
+        border-top: 1px solid #eee;
+      }
+
+      .edit-btn,
+      .delete-btn {
+        border: none;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .edit-btn {
+        background-color: #00796b;
+        color: white;
+      }
+
+      .edit-btn:hover {
+        background-color: #004d40;
+      }
+
+      .delete-btn {
+        background-color: #ef5350;
+        color: white;
+      }
+
+      .delete-btn:hover {
+        background-color: #c62828;
+      }
+
+      /* Review Section */
+      .review-section {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+      }
+
+      .review-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .reviews-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.7rem;
+        max-width: 1250px;
+        margin: 0 auto;
+      }
+
+      .review-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        max-width: 350px;
+        flex: 1;
+        transition: transform 0.3s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .review-text {
+        font-style: italic;
+        color: #444;
+        margin-bottom: 1.2rem;
+      }
+
+      .review-card h4 {
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      .see-all-btn {
+        display: inline-block;
+        margin-top: 3rem;
+        padding: 0.75rem 2rem;
+        background: linear-gradient(135deg, #00796b, #004d40);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 30px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .see-all-btn:hover {
+        background: linear-gradient(135deg, #00695c, #003f36);
+        transform: translateY(-2px);
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* Footer Section */
+      footer {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      /* Extras */
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+
+      /* Order management section */
+
+      .orders-link-section {
+        height: 60vh;
+        background: linear-gradient(135deg, #004d40, #00796b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .orders-box {
+        background: #fff;
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        max-width: 620px;
+        width: 100%;
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      .orders-box h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #004d40, #00796b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .orders-box p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 2rem;
+      }
+
+      .orders-btn {
+        background: linear-gradient(135deg, #004d40, #00796b);
+        color: white;
+        padding: 1rem 2.5rem;
+        border: none;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 30px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .orders-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Optional fade-in effect */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hedear Section -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="OrderManagement.html">Manage Orders</a>
+      </div>
+    </header>
+
+    <!-- Second Section -->
+    <!-- --------------------------------------------- -->
+    <section class="seller-summary fade-in">
+      <div class="summary-inner">
+        <div class="summary-header">
+          <h2>Welcome back, Mohamed!</h2>
+          <p>
+            Here’s a quick overview of your store’s performance today. Keep an
+            eye on your progress and growth!
+          </p>
+        </div>
+        <div class="summary-container">
+          <div class="summary-card">
+            <i class="bx bx-box"></i>
+            <h3>42</h3>
+            <p>Products</p>
+          </div>
+          <div class="summary-card">
+            <i class="bx bx-cart"></i>
+            <h3>128</h3>
+            <p>Orders</p>
+          </div>
+          <div class="summary-card">
+            <i class="bx bx-star"></i>
+            <h3>4.8</h3>
+            <p>Rating</p>
+          </div>
+          <div class="summary-card">
+            <i class="bx bx-dollar-circle"></i>
+            <h3>$7,540</h3>
+            <p>Total Sales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+    <!-- Reviews Section -->
+    <section class="review-section fade-in">
+      <h1>Customer Reviews</h1>
+
+      <div class="reviews-container">
+        <div class="review-card">
+          <p class="review-text">
+            “Absolutely amazing! I ordered twice and both times the products
+            arrived early and in perfect condition. Love Agozi!”
+          </p>
+          <h4>- Hannah R.</h4>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            “These deals are unmatched. I got a full skincare set for under $20
+            — and it's actually good.”
+          </p>
+          <h4>- Leo G.</h4>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            “Honestly the packaging alone had me hooked. But the quality? Even
+            better. 10/10.”
+          </p>
+          <h4>- Jasmine T.</h4>
+        </div>
+
+        <div class="review-card">
+          <p class="review-text">
+            “I found the perfect birthday gift thanks to Agozi’s collection.
+            Highly recommend their seasonal bundles.”
+          </p>
+          <h4>- Mark F.</h4>
+        </div>
+      </div>
+
+      <!-- زر See All Reviews -->
+      <a href="ReviewsPage.html" class="see-all-btn">See All Reviews</a>
+    </section>
+
+    <!-- Third Section -->
+    <!-- ------------------------------------------- -->
+    <section class="seller-profile">
+      <section class="seller-profile fade-in">
+        <div class="profile-container">
+          <div class="profile-pic-wrapper">
+            <div class="profile-pic">
+              <img src="seller-picture2.jpg" alt="Seller Photo" />
+            </div>
+            <button class="upload-btn">Change Photo</button>
+            <h3>Mohamed Smith</h3>
+            <p>Palestine, Hebron</p>
+            <p>Store Owner</p>
+          </div>
+
+          <div class="profile-form-container">
+            <h2 class="section-title">Seller Information</h2>
+            <form class="profile-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="seller-name">Full Name</label>
+                  <input type="text" id="seller-name" value="Mohamed Smith" />
+                </div>
+
+                <div class="form-group">
+                  <label for="seller-email">Email</label>
+                  <input
+                    type="email"
+                    id="seller-email"
+                    value="seller@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="seller-phone">Phone Number</label>
+                  <input type="text" id="seller-phone" value="+1234567890" />
+                </div>
+
+                <div class="form-group">
+                  <label for="seller-address">Address</label>
+                  <input
+                    type="text"
+                    id="seller-address"
+                    value="Hebron, Palestine"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="store-name">Store Name</label>
+                  <input
+                    type="text"
+                    id="store-name"
+                    value="Mohamed’s Tech Store"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="business-type">Business Type</label>
+                  <input type="text" id="business-type" value="Electronics" />
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="store-description">Store Description</label>
+                <input
+                  type="text"
+                  id="store-description"
+                  value="A store selling high-quality tech products."
+                />
+              </div>
+
+              <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Fourth Section -->
+    <!-- ------------------------------------ -->
+    <section class="product-management fade-in">
+      <div class="product-management-inner">
+        <div class="product-header">
+          <h2>Manage Your Products</h2>
+          <p>
+            You can add, edit, or remove the products in your store anytime.
+          </p>
+          <button class="add-product-btn">
+            <i class="bx bx-plus"></i> Add New Product
+          </button>
+        </div>
+
+        <div class="product-list">
+          <!-- Product Card 1 -->
+          <div class="product-card">
+            <img src="SellerItems/item2.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>Wireless Headphones</h3>
+              <p class="price">$59.99</p>
+              <p class="stock in-stock">In Stock: 25</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card">
+            <img src="SellerItems/item9.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>Smartwatch Pro</h3>
+              <p class="price">$129.99</p>
+              <p class="stock in-stock">In Stock: 12</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card">
+            <img src="SellerItems/item5.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>Gaming Mouse</h3>
+              <p class="price">$39.00</p>
+              <p class="stock in-stock">In Stock: 48</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="product-card">
+            <img src="SellerItems/item11.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>Bluetooth Speaker</h3>
+              <p class="price">$79.50</p>
+              <p class="stock out-of-stock">Out of Stock</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="product-card">
+            <img src="SellerItems/item14.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>LED Monitor 24"</h3>
+              <p class="price">$199.99</p>
+              <p class="stock in-stock">In Stock: 10</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="product-card">
+            <img src="SellerItems/item20.jpg" alt="Product Image" />
+            <div class="product-info">
+              <h3>Mini Projector</h3>
+              <p class="price">$89.99</p>
+              <p class="stock in-stock">In Stock: 7</p>
+            </div>
+            <div class="product-actions">
+              <button class="edit-btn"><i class="bx bx-edit"></i> Edit</button>
+              <button class="delete-btn">
+                <i class="bx bx-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="orders-link-section fade-in">
+      <div class="orders-box">
+        <h2>Go Manage Your Orders!</h2>
+        <p>
+          Track, update, and fulfill your customer orders efficiently in one
+          place.
+        </p>
+        <a href="OrderManagement.html" class="orders-btn"
+          >Go to Order Management</a
+        >
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section">
+      <section class="info-section fade-in">
+        <div class="info-wrapper">
+          <div class="info-column">
+            <h3>Company</h3>
+            <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+            <p>+391 (0)35 2568 4593</p>
+            <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+          </div>
+
+          <div class="info-column">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="#">New Products</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">Bundle & Save</a></li>
+              <li><a href="#">Online Gift Card</a></li>
+            </ul>
+
+            <h3>Information</h3>
+            <ul>
+              <li><a href="#">Start a Return</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping FAQ</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="info-column">
+            <h3>Good Emails.</h3>
+            <p>
+              Enter your email below to be the first to know about new
+              collections and product launches.
+            </p>
+            <form class="email-form">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Selling | Agozi</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        min-width: 550px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #004d40;
+      }
+
+      .auth-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .auth-links a {
+        padding: 0.5rem 1.0rem;
+        background: linear-gradient(135deg, #004d40, #00796b, #68a79f);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: opacity 0.35s;
+      }
+
+      .auth-links a:hover {
+        opacity: 0.8;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 4rem 2rem;
+        background-image: url("/Images/hero-banner2.png"); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .hero-content {
+        max-width: 700px;
+        padding-right: 60px;
+        margin-right: 16px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #fff;
+        display: flex;
+      }
+
+      .hero .btn-group {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.808), #00796b);
+        color: white;
+        text-decoration: none;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-btn:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Seller Form Section */
+      .seller-form {
+        padding: 4rem 2rem;
+        background: #ffffff;
+        max-width: 900px;
+        margin: 3rem auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        margin-top: 4rem;
+      }
+
+      .seller-form h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: #00796b;
+        margin-bottom: 2rem;
+      }
+
+      .seller-form form {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .seller-form input,
+      .seller-form select,
+      .seller-form textarea {
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .seller-form input[type="submit"] {
+        background: #00796b;
+        color: white;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .seller-form input[type="submit"]:hover {
+        background: #004d40;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #fff;
+      }
+
+      footer a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      footer p {
+        margin-top: 1rem;
+        color: #888;
+      }
+
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .auth-links {
+          margin-top: 1rem;
+        }
+
+        .hero {
+          justify-content: center;
+          text-align: center;
+          padding: 2rem;
+        }
+
+        .hero-content {
+          padding-right: 0;
+        }
+
+        .hero .btn-group {
+          justify-content: center;
+        }
+      }
+
+      /* New Section */
+      .why-sell {
+        padding: 4rem 2rem;
+        background-color: #f0fdfa;
+        text-align: center;
+      }
+
+      .why-sell h2 {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .feature {
+        background: #ffffff;
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature i {
+        font-size: 2.5rem;
+        color: #00796b;
+        margin-bottom: 1rem;
+      }
+
+      .feature h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #004d40;
+        font-weight: 600;
+      }
+
+      .feature p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* New Section */
+      /* ---------------------------- */
+      .how-it-works {
+        padding: 2rem 2rem 0rem;
+        background-color: #ffffff;
+        text-align: center;
+        min-height: 88vh;
+      }
+
+      .how-it-works h2 {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .step {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        background: #f9f9f9;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-5px);
+      }
+
+      .step i {
+        font-size: 2.8rem;
+        color: #00796b;
+        margin-bottom: 1rem;
+      }
+
+      .step h3 {
+        font-size: 1.3rem;
+        color: #004d40;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .step p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* New Section */
+      /* ------------------------------ */
+      .faq {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #b2dfdb 10%, #a5d6a7 40%, #80cbc4);
+        text-align: center;
+      }
+
+      .faq h2 {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .faq-list {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .faq-item {
+        background: #ffffff;
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-item h3 {
+        font-size: 1.2rem;
+        color: #004d40;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .faq-item p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* New Section */
+      /* ------------------------- */
+      .comparison {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #e0f2f1, #ffffff);
+        text-align: center;
+      }
+
+      .comparison h2 {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .comparison-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .comparison-grid {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      .comparison-col {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        flex: 1;
+        transition: transform 0.3s;
+      }
+
+      .comparison-col:hover {
+        transform: translateY(-6px);
+      }
+
+      .comparison-col h3 {
+        font-size: 1.5rem;
+        color: #004d40;
+        margin-bottom: 1.5rem;
+      }
+
+      .comparison-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .comparison-col li {
+        font-size: 1rem;
+        color: #555;
+        margin: 0.8rem 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .comparison-col i.bx-check-circle {
+        color: #00796b;
+        font-size: 1.2rem;
+      }
+
+      .comparison-col i.bx-x-circle {
+        color: #d32f2f;
+        font-size: 1.2rem;
+      }
+
+      /* Next Section */
+      /* ----------------------- */
+      .seller-quotes {
+        padding: 4rem 2rem;
+        background-color: #ffffff;
+        text-align: center;
+      }
+
+      .seller-quotes h2 {
+        font-size: 2.2rem;
+        color: #00796b;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .quote-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .quote-cards {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      .quote-card {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        flex: 1;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .quote-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .quote-card img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .quote-card p {
+        font-size: 1rem;
+        color: #444;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .quote-card h4 {
+        font-size: 1rem;
+        color: #00796b;
+        font-weight: 600;
+      }
+
+      /* New Section */
+      /* ----------------------------- */
+      /* Final Call to Action Section */
+      .final-cta {
+        background: #00796b; /* Bold teal background */
+        color: #fff; /* White text */
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .final-cta h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .final-cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .final-cta .cta-btn {
+        background: #004d40; /* Darker teal button */
+        color: white;
+        text-decoration: none;
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .final-cta .cta-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Pre-footer Section */
+      .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f3f3f3 10%, #e9e6e6 20%, #fff);
+        color: #333;
+        min-height: calc(88vh - 100px); /* Leaves space for footer height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .info-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #004d40;
+      }
+
+      .info-column p,
+      .info-column a,
+      .info-column li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        text-decoration: none;
+      }
+
+      .info-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .info-column a:hover {
+        color: #00796b;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .email-form input {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+      }
+
+      .email-form button {
+        padding: 0.6rem 1rem;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .email-form button:hover {
+        background-color: #004d40;
+      }
+
+      /* إعدادات fade-in */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px); /* لجعل العنصر يظهر وكأنه يطفو */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* التأثير مع الانتقال */
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0); /* عندما يظهر العنصر، يعود لمكانه الطبيعي */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo"><i class="bx bx-gift"></i> Agozi</div>
+      <nav>
+        <ul>
+          <li><a href="HomePage.html">Home</a></li>
+          <li><a href="#testimonial">Reviews</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="SellerRegistration.html">Register</a>
+        <a href="Login.html">Login</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="hero-content">
+        <h1>Start Selling on Agozi!!</h1>
+        <p>
+          Join thousands of sellers and start showcasing your products on Agozi
+          — the platform that connects you with millions of customers.
+        </p>
+        <div class="btn-group">
+          <a href="SellerRegistration.html" class="cta-btn"
+            >Sign Up To Start</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="why-sell">
+      <section class="why-sell fade-in">
+        <h2>Why Sell with Agozi?</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="bx bx-world"></i>
+            <h3>Massive Reach</h3>
+            <p>
+              Connect with thousands of potential buyers across the country.
+            </p>
+          </div>
+          <div class="feature">
+            <i class="bx bx-shield-quarter"></i>
+            <h3>Secure Payments</h3>
+            <p>All transactions are protected with trusted and safe systems.</p>
+          </div>
+          <div class="feature">
+            <i class="bx bx-support"></i>
+            <h3>24/7 Seller Support</h3>
+            <p>Our dedicated team is always here to help you grow.</p>
+          </div>
+          <div class="feature">
+            <i class="bx bx-store-alt"></i>
+            <h3>Easy Store Management</h3>
+            <p>Simple tools to manage your products, orders, and earnings.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="how-it-works">
+      <section class="how-it-works fade-in">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <i class="bx bx-user-plus"></i>
+            <h3>Sign Up</h3>
+            <p>Create your seller account in just a few clicks.</p>
+          </div>
+          <div class="step">
+            <i class="bx bx-upload"></i>
+            <h3>List Products</h3>
+            <p>Add your products with photos, descriptions, and prices.</p>
+          </div>
+          <div class="step">
+            <i class="bx bx-cart-alt"></i>
+            <h3>Get Orders</h3>
+            <p>Start receiving orders from customers across the platform.</p>
+          </div>
+          <div class="step">
+            <i class="bx bx-dollar-circle"></i>
+            <h3>Earn Money</h3>
+            <p>Track your earnings and grow your business with ease.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="faq fade-in">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Do I need a business license to sell?</h3>
+          <p>
+            No, anyone can start selling on Agozi. A business license is not
+            required to get started.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there a commission fee?</h3>
+          <p>
+            Yes, we charge a small commission on each successful sale. You only
+            pay when you earn.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I get paid?</h3>
+          <p>
+            Payments are transferred to your registered bank account on a
+            regular schedule.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I sell handmade or used items?</h3>
+          <p>
+            Absolutely! We welcome handmade, custom, and pre-owned items in
+            relevant categories.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="comparison fade-in">
+      <h2>Why Choose Agozi?</h2>
+      <div class="comparison-grid">
+        <div class="comparison-col">
+          <h3>Agozi</h3>
+          <ul>
+            <li><i class="bx bx-check-circle"></i> 0% listing fees</li>
+            <li><i class="bx bx-check-circle"></i> Fast payouts</li>
+            <li><i class="bx bx-check-circle"></i> Seller support 24/7</li>
+            <li><i class="bx bx-check-circle"></i> Built-in marketing tools</li>
+            <li><i class="bx bx-check-circle"></i> Simple, modern dashboard</li>
+          </ul>
+        </div>
+        <div class="comparison-col">
+          <h3>Other Platforms</h3>
+          <ul>
+            <li><i class="bx bx-x-circle"></i> Listing fees required</li>
+            <li><i class="bx bx-x-circle"></i> Delayed payments</li>
+            <li><i class="bx bx-x-circle"></i> Limited support hours</li>
+            <li><i class="bx bx-x-circle"></i> External marketing required</li>
+            <li><i class="bx bx-x-circle"></i> Outdated interfaces</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <section class="seller-quotes fade-in">
+      <h2>What Our Sellers Are Saying</h2>
+      <div class="quote-cards">
+        <div class="quote-card">
+          <img src="Images/Sellers/Seller1.jpg" alt="Seller 1" />
+          <p>
+            "Agozi made it so easy to manage my shop and grow my customer base!"
+          </p>
+          <h4>Sami T.</h4>
+        </div>
+        <div class="quote-card">
+          <img src="Images/Sellers/Seller2.jpg" alt="Seller 2" />
+          <p>"I started earning within my first week. Super smooth process!"</p>
+          <h4>Ali M.</h4>
+        </div>
+        <div class="quote-card">
+          <img src="Images/Sellers/Seller4.jpg" alt="Seller 3" />
+          <p>"The support team is amazing. Quick replies and real help."</p>
+          <h4>Sofia R.</h4>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Final Call to Action Section -->
+    <section class="final-cta fade-in">
+      <div class="cta-content">
+        <h2>Ready to Take Your Business to the Next Level?</h2>
+        <p>
+          Join Agozi and start reaching millions of customers today! It's fast,
+          easy, and free to get started.
+        </p>
+        <a href="SellerRegistration.html" class="cta-btn"
+          >Become a Seller Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Pre-footer section -->
+    <section class="info-section fade-in">
+      <div class="info-wrapper">
+        <div class="info-column">
+          <h3>Company</h3>
+          <p>Find a location nearest you. <a href="#">See Our Stores</a></p>
+          <p>+391 (0)35 2568 4593</p>
+          <p><a href="mailto:hello@domain.com">hello@domain.com</a></p>
+        </div>
+
+        <div class="info-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Bundle & Save</a></li>
+            <li><a href="#">Online Gift Card</a></li>
+          </ul>
+
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="info-column">
+          <h3>Good Emails.</h3>
+          <p>
+            Enter your email below to be the first to know about new collections
+            and product launches.
+          </p>
+          <form class="email-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="#">Conditions of Use</a>
+      <a href="#">Privacy Notice</a>
+      <a href="#">Help</a>
+      <p>© 1996–2025, Agozi, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+      // هذه دالة للتحقق إذا كان العنصر قد ظهر بنسبة 30% في نافذة العرض
+      function isElementNearViewport(el) {
+        const rect = el.getBoundingClientRect();
+        // نتحقق إذا كان 30% من العنصر داخل نافذة العرض
+        return (
+          rect.top < window.innerHeight * 0.67 &&
+          rect.bottom >= window.innerHeight * 0.3
+        );
+      }
+
+      // إضافة الفئة "visible" عند التمرير إلى العنصر
+      function checkFadeInElements() {
+        const fadeInElements = document.querySelectorAll(".fade-in");
+        fadeInElements.forEach((element) => {
+          if (isElementNearViewport(element)) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      // تنفيذ الدالة عند التمرير
+      window.addEventListener("scroll", checkFadeInElements);
+
+      // تنفيذ الدالة عند تحميل الصفحة
+      document.addEventListener("DOMContentLoaded", checkFadeInElements);
+    </script>
+  </body>
+</html>
